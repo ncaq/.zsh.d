@@ -1,7 +1,8 @@
 gitallpull()
 {
     current=`pwd`
-    dotgitdir=(`locate -r "/home/ncaq.*\.git$"`)
+    homepath=~
+    dotgitdir=(`locate -r "${homepath}.*\.git$"`)
     for i in ${dotgitdir}
     do
 	cd ${i}
