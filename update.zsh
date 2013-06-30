@@ -3,7 +3,7 @@ update ()
     sudo emerge --sync
     sudo layman -S
     sudo eix-update
-    sudo emerge -uDN world
+#sudo emerge -uDN world
 
     sudo gem update
     sudo cabal update
