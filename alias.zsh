@@ -2,7 +2,7 @@
 alias ls="\ls --color=always -hFAv"
 alias l="\ls --color=always -hFlAv"
 alias ll="\ls --color=always -hFlv"
-alias le="\ls -lA --color=always|less"
+alias le="\ls -hFlAv --color=always|less"
 #aliasを有効にしたsudo http://blog.hekt.org/archives/5085
 alias sudo='sudo -E '
 #長い奴ら
