@@ -15,8 +15,8 @@ export EDITOR="emacsclient -a emacs"
 
 export PAGER=/usr/bin/less
 #less add color view
-export LESS='-R'
+export LESS='-R -N'
 #syntaxs highlight
-export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+export LESSOPEN='| src-hilite-lesspipe.sh %s'
 
 ln -sf Copy/sync/.zsh_history ~/
