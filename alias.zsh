@@ -29,3 +29,7 @@ alias starwars="telnet towel.blinkenlights.nl"
 #mozcの設定が普通に出せない…
 alias mozc-config="/usr/lib/mozc/mozc_tool -mode=config_dialog"
 alias mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
+
+
+#意味不明
+alias mv="mv"
