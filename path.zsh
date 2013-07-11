@@ -1,2 +1,2 @@
-PATH=${PATH}:/sbin/:/opt/copy/:~/.cabal/bin/
+PATH=${PATH}:/sbin/:/usr/sbin/:/opt/copy/:~/.cabal/bin/
 export PATH
