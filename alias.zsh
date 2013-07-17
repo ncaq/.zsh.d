@@ -1,35 +1,40 @@
 #some more ls aliases
-alias ls="\ls --color=always -hFAv"
-alias l="\ls --color=always -hFlAv"
-alias ll="\ls --color=always -hFlv"
-alias le="\ls -hFlAv --color=always|less"
+alias -g ls="\ls --color=always -hFAv"
+alias -g l="\ls --color=always -hFlAv"
+alias -g ll="\ls --color=always -hFlv"
+alias -g le="\ls -hFlAv --color=always|less"
 #aliasを有効にしたsudo http://blog.hekt.org/archives/5085
-alias sudo='sudo -E '
+alias -g sudo='sudo -E '
 #長い奴ら
-alias c="sudo dispatch-conf"
-alias e="emacsclient -a emacs"
-alias g="gnome-open"
-alias k="kde-open"
-alias m="sudo emerge --autounmask-write -v"
-alias make="make -j5"
-alias o="locate"
-alias om="omake -P -w -j5"
-alias omake="omake -j5"
-alias p="less"
-alias r="rsync -av --progress -h"
-alias t="trash -v"
-alias u="sudo updatedb"
-alias z="exec zsh -l"
+alias -g c="sudo dispatch-conf"
+alias -g e="emacsclient -a emacs"
+alias -g g="gnome-open"
+alias -g k="kde-open"
+alias -g m="sudo emerge --autounmask-write -v"
+alias -g make="make -j5"
+alias -g o="locate"
+alias -g om="omake -P -w -j5"
+alias -g omake="omake -j5"
+alias -g p="less"
+alias -g r="rsync -av --progress -h"
+alias -g t="trash -v"
+alias -g u="sudo updatedb"
+alias -g z="exec zsh -l"
 #hasktagsが全部回ってくれるそうで
-alias hasktagsr="find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c"
+alias -g hasktagsr="find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c"
 #abcedのいつもの
-alias ripcd="abcde -M -a cddb,read,encode,tag,move,replaygain,clean"
+alias -g ripcd="abcde -M -a cddb,read,encode,tag,move,replaygain,clean"
 #スターウォーズを上映
-alias starwars="telnet towel.blinkenlights.nl"
+alias -g starwars="telnet towel.blinkenlights.nl"
 #mozcの設定が普通に出せない…
-alias mozc-config="/usr/lib/mozc/mozc_tool -mode=config_dialog"
-alias mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
+alias -g mozc-config="/usr/lib/mozc/mozc_tool -mode=config_dialog"
+alias -g mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 
+#函数だがまあ別に良いだろう
+n(){nkf -w $1|p}
 
-#意味不明
-alias mv="mv"
+#nocorrectのせいでsudo時にちゃんと動かない
+#どうせ,"もしかして機能"無効化してるし…
+unalias mkdir
+unalias mv
+unalias mysql

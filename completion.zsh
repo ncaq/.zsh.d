@@ -36,3 +36,6 @@ setopt list_types
 setopt complete_aliases
 #ディレクトリ 補完 /を付与
 setopt auto_param_slash
+
+#zsh-completions用の設定
+fpath=(/home/ncaq/.oh-my-zsh/custom/zsh-completions/src $fpath)
