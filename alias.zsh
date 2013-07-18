@@ -3,8 +3,6 @@ alias -g ls="\ls --color=always -hFAv"
 alias -g l="\ls --color=always -hFlAv"
 alias -g ll="\ls --color=always -hFlv"
 alias -g le="\ls -hFlAv --color=always|less"
-#aliasを有効にしたsudo http://blog.hekt.org/archives/5085
-alias -g sudo='sudo -E '
 #長い奴ら
 alias -g c="sudo dispatch-conf"
 alias -g e="emacsclient -a emacs"
@@ -32,9 +30,3 @@ alias -g mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 
 #函数だがまあ別に良いだろう
 n(){nkf -w $1|p}
-
-#nocorrectのせいでsudo時にちゃんと動かない
-#どうせ,"もしかして機能"無効化してるし…
-unalias mkdir
-unalias mv
-unalias mysql
