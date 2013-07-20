@@ -31,5 +31,5 @@ alias -g mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 #函数だがまあ別に良いだろう
 p()
 {
-    source-highlight-esc.sh $1|nkf -w|less
+    source-highlight -fesc -i $1 -o /dev/stdout --failsafe|nkf -w|less
 }
