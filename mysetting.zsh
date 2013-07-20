@@ -13,10 +13,8 @@ setopt share_history
 export VISUAL="emacsclient -a emacs"
 export EDITOR="emacsclient -a emacs"
 
-export PAGER=/usr/bin/less
+export PAGER="less"
 #less add color view
 export LESS='-R -N'
-#syntaxs highlight
-export LESSOPEN='| src-hilite-lesspipe.sh %s'
 
 ln -sf Copy/sync/.zsh_history ~/
