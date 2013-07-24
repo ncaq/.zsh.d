@@ -1,8 +1,8 @@
 #some more ls aliases
-alias -g ls="\ls --color=always -hFAv"
-alias -g l="\ls --color=always -hFlAv"
-alias -g ll="\ls --color=always -hFlv"
-alias -g le="\ls -hFlAv --color=always|less"
+alias -g ls="ls --color=auto -hFAvi"
+alias -g ll="ls -hFAvi -l"
+alias -g l="ll -a"
+alias -g le="l |less -N"
 #長い奴ら
 alias -g c="sudo dispatch-conf"
 alias -g e="emacsclient -a emacs"
@@ -31,5 +31,5 @@ alias -g mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 #函数だがまあ別に良いだろう
 p()
 {
-    source-highlight -fesc -i $1 -o /dev/stdout --failsafe|nkf -w|less
+    source-highlight -fesc -i $1 -o /dev/stdout --failsafe|nkf -w|less -N
 }

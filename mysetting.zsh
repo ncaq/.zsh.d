@@ -15,6 +15,6 @@ export EDITOR="emacsclient -a emacs"
 
 export PAGER="less"
 #less add color view
-export LESS='-R -N'
+export LESS='-R'
 
-ln -sf Copy/sync/.zsh_history ~/
+ln -sf ~/Dropbox/sync/.zsh_history ~/
