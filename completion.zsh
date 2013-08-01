@@ -39,3 +39,4 @@ setopt auto_param_slash
 
 #zsh-completions用の設定
 fpath=(/home/ncaq/.oh-my-zsh/custom/zsh-completions/src $fpath)
+
