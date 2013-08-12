@@ -1,32 +1,33 @@
 #some more ls aliases
-alias -g ls="ls --color=auto -hFAvi"
-alias -g ll="ls -hFAvi -l"
-alias -g l="ll -a"
-alias -g le="l |less -N"
+alias    ls="ls --color=auto -hFAvi"
+alias    ll="ls -hFAvi -l"
+alias     l="ll -a"
+alias    le="l |less -N"
 #長い奴ら
-alias -g a="sudo dispatch-conf"
-alias -g c="rsync-copy"
+alias    a="sudo dispatch-conf"
+alias    c="rsync-copy"
 alias -g e="emacsclient -a emacs"
-alias -g ga="git add --all"
-alias -g k="kde-open"
-alias -g m="sudo emerge --autounmask-write -v"
+alias    g="gnome-open"
+alias    ga="git add --all"
+alias    k="kde-open"
+alias    m="sudo emerge --autounmask-write"
 alias -g make="make -j5"
 alias -g o="locate"
 alias -g om="omake -P -w -j5"
 alias -g omake="omake -j5"
 alias -g p="p"
 alias -g t="trash -v"
-alias -g u="sudo updatedb"
-alias -g z="exec zsh -l"
+alias    u="sudo updatedb"
+alias    z="exec zsh -l"
 #hasktagsが全部回ってくれるそうで
-alias -g hasktagsr="find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c"
+alias    hasktagsr="find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c"
 #abcedのいつもの
-alias -g ripcd="abcde -M -a cddb,read,encode,tag,move,replaygain,clean"
+alias    ripcd="abcde -M -a cddb,read,encode,tag,move,replaygain,clean"
 #スターウォーズを上映
-alias -g starwars="telnet towel.blinkenlights.nl"
+alias    starwars="telnet towel.blinkenlights.nl"
 #mozcの設定が普通に出せない…
-alias -g mozc-config="/usr/lib/mozc/mozc_tool -mode=config_dialog"
-alias -g mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
+alias    mozc-config="/usr/lib/mozc/mozc_tool -mode=config_dialog"
+alias    mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
 
 #函数だがまあ別に良いだろう
 p()
