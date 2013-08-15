@@ -1,5 +1,4 @@
 #スペル訂正時にDVORAK配列を前提にする
-#setopt dvorak
 setopt dvorak
 
 #スペル訂正逆に鬱陶しいわ
@@ -38,5 +37,6 @@ setopt complete_aliases
 setopt auto_param_slash
 
 #zsh-completions用の設定
-fpath=(/home/ncaq/.oh-my-zsh/custom/zsh-completions/src $fpath)
+fpath=(/home/ncaq/Documents/tool/zsh-completions/src $fpath)
 
+compinit -u
