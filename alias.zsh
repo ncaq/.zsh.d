@@ -1,39 +1,34 @@
 #some more ls aliases
-alias    ls="ls --color=auto -hFAvi"
-alias    ll="ls -hFAvi -l"
-alias     l="ll -a"
-alias    le="l |less -N"
+alias -g ls='ls --color=auto -hFAvi'
+alias -g ll='ls -hFAvi -l'
+alias -g  l='ll -a'
+alias -g le='l |less -N'
 #長い奴ら
-alias    a="sudo dispatch-conf"
-alias -g c="rsync-copy"
-alias -g e="emacsclient -a emacs"
-alias -g g="gnome-open"
-alias    ga="git add --all"
-alias -g k="kde-open"
-alias    m="sudo emerge"
-alias -g make="make -j5"
-alias -g o="locate"
-alias -g om="omake -P -w -j5"
-alias -g omake="omake -j5"
-alias -g p="p"
-alias -g t="trash -v"
-alias    u="sudo updatedb"
-alias    z="exec zsh -l"
+alias    a='sudo dispatch-conf'
+alias    ga='git add --all'
+alias    m='sudo emerge'
+alias    u='sudo updatedb'
+alias    udn='sudo emerge -uDN world'
+alias    z='exec zsh -l'
+alias -g c='rsync-copy'
+alias -g e='emacsclient -a emacs'
+alias -g make='make -j5'
+alias -g o='locate'
+alias -g om='omake -P -w -j5'
+alias -g omake='omake -j5'
+alias -g open='xdg-open'
+alias -g p='less -N'
+alias -g t='trash -v'
+#sudo hack
+alias -g sudo='sudo -E'
 #hasktagsが全部回ってくれるそうで
-alias    hasktagsr="find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c"
+alias    hasktagsr='find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c'
 #abcedのいつもの
-alias    ripcd="abcde -M -a cddb,read,encode,tag,move,replaygain,clean"
+alias    ripcd='abcde -M -a cddb,read,encode,tag,move,replaygain,clean'
 #スターウォーズを上映
-alias    starwars="telnet towel.blinkenlights.nl"
+alias    starwars='telnet towel.blinkenlights.nl'
 #mozcの設定が普通に出せない…
-alias    mozc-config="/usr/lib/mozc/mozc_tool -mode=config_dialog"
-alias    mozc-dict="/usr/lib/mozc/mozc_tool --mode=dictionary_tool"
-
-#函数だがまあ別に良いだろう
-p()
-{
-    source-highlight -fesc -i $@ -o /dev/stdout --failsafe|nkf -w|less -N
-}
-
+alias    mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
+alias    mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
 #historyの問題を解決
 alias history='fc -li -30'

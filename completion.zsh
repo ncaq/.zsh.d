@@ -1,8 +1,8 @@
 #スペル訂正時にDVORAK配列を前提にする
 setopt dvorak
 
-#スペル訂正逆に鬱陶しいわ
-unsetopt correct_all
+#スペル訂正は時に鬱陶しい
+setopt correct_all
 
 #コマンド履歴検索にフィルタを
 autoload history-search-end
