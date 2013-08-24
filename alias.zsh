@@ -3,6 +3,7 @@ alias -g ls='ls --color=auto -hFAvi'
 alias -g ll='ls -hFAvi -l'
 alias -g  l='ll -a'
 alias -g le='l |less -N'
+
 #長い奴ら
 alias    a='sudo dispatch-conf'
 alias    ga='git add --all'
@@ -13,12 +14,13 @@ alias    z='exec zsh -l'
 alias -g c='rsync-copy'
 alias -g e='emacsclient -a emacs'
 alias -g make='make -j5'
+alias -g n='xdg-open'
 alias -g o='locate'
 alias -g om='omake -P -w -j5'
 alias -g omake='omake -j5'
-alias -g open='xdg-open'
 alias -g p='less -N'
 alias -g t='trash -v'
+
 #sudo hack
 alias -g sudo='sudo -E'
 #hasktagsが全部回ってくれるそうで

@@ -18,5 +18,3 @@ export PAGER="less"
 export LESS='-R'
 
 export LESSOPEN="|src-hilite-lesspipe.sh %s|nkf -w"
-
-ln -sf ~/Dropbox/sync/.zsh_history ~/
