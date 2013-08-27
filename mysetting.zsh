@@ -17,4 +17,4 @@ export PAGER="less"
 #less add color view
 export LESS='-R'
 
-export LESSOPEN="|src-hilite-lesspipe.sh %s|nkf -w"
+export LESSOPEN="|src-hilite-lesspipe.sh %s|nkf -w -Lu -d -x"
