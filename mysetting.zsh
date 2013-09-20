@@ -18,3 +18,6 @@ export PAGER="less"
 export LESS='-R'
 
 export LESSOPEN="|src-hilite-lesspipe.sh %s|nkf -w -Lu -d -x"
+
+#auto ls when cd
+function chpwd() {ls --color=auto -hFAvi -li -a}
