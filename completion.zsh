@@ -18,26 +18,10 @@ bindkey "^N" history-beginning-search-forward-end
 #0にすると､ウィンドウを超えて出力されるときにのみ出力される｡
 LISTMAX=0
 
-#補完のときプロンプトの位置を変えない
-setopt always_last_prompt
-#補完候補が複数あるとき自動でメニューをリストアップ
-setopt auto_list
-#補完要求に対してメニューをリストアップ
-setopt auto_menu
 #補完候補を詰めて表示する
 setopt list_packed
-#補完の表示を水平方向に
-setopt list_rows_first
-#補完候補の表示を親切に ls -F
-# /がディレクトリ
-# @がシンボリックリンク
+#補完候補の表示をls -Fのようにする
 setopt list_types
-# tabキーの節約
-#setopt menu_complete
-#エイリアスに対して別の補完定義を telnet tt
-setopt complete_aliases
-#ディレクトリ 補完 /を付与
-setopt auto_param_slash
 
 #補完の情報を増やす
 #http://qiita.com/PSP_T/items/ed2d36698a5cc314557d
