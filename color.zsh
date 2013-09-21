@@ -1,14 +1,11 @@
 ZSH_THEME="blinks"
 
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias -g ls="ls --color=always"
-    alias -g dir="dir --color=always"
-    alias -g vdir="vdir --color=always"
-    alias -g grep="grep --color=always"
-    alias -g fgrep="fgrep --color=always"
-    alias -g egrep="egrep --color=always"
-fi
+#dircolorで設定
+eval $(dircolors ~/Documents/tool/dircolors-solarized/dircolors.256dark)
+#補完も同じ色に
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-#treeのカラーを常に有効に
-alias tree="tree -C"
+alias -g ls="ls --color=auto"
+alias -g grep="grep --color=always"
+alias -g tree="tree -C"
+alias -g eix='eix -F'
