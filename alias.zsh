@@ -8,3 +8,5 @@ alias    mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
 alias    grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
 #get full path
 alias fullpath='find `pwd` -maxdepth 1 -mindepth 1'
+#mouse mode 0=disable 1=enable
+alias mtoggle='xinput set-int-prop "ImPS/2 Generic Wheel Mouse" "Device Enabled" 8'
