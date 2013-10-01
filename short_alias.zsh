@@ -3,12 +3,15 @@ alias -g ls='ls --color=auto   -hFAv'
 alias -g ll='ls --color=auto   -hFAvi -li'
 alias -g  l='ls --color=auto   -hFAvi -li -a'
 alias -g le='ls --color=always -hFAvi -li -a|less -N'
+
 #長い奴ら
 alias    a='sudo dispatch-conf'
-alias    ga='git add --all'
+alias    db='dub build --build=unittest'
+alias    ga='git add --all .'
 alias    u='sudo updatedb'
 alias    udn='sudo emerge -uDNt --with-bdeps=y world'
 alias    z='exec zsh -l'
+
 alias -g c='rsync-copy'
 alias -g e='emacsclient -a emacs'
 alias -g m='sudo emerge -t'
