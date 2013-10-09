@@ -1,5 +1,4 @@
 #default hack
-alias 	 x='clamdscan --infected && extract'
 alias -g ag='ag -i'
 alias -g grep='grep -i'
 alias -g history='fc -li -30'
