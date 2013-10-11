@@ -22,6 +22,8 @@ LISTMAX=0
 setopt list_packed
 #補完候補の表示をls -Fのようにする
 setopt list_types
+#.から始まるファイルも展開する
+setopt glob_dots
 
 #補完の情報を増やす
 #http://qiita.com/PSP_T/items/ed2d36698a5cc314557d
