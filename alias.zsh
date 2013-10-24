@@ -10,3 +10,5 @@ alias    grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
 alias fullpath='find `pwd` -maxdepth 1 -mindepth 1'
 #mouse mode 0=disable 1=enable
 alias mtoggle='xinput set-int-prop "ImPS/2 Generic Wheel Mouse" "Device Enabled" 8'
+#dcd server
+alias dcdsetup='dcd-server -I/usr/include/phobos2 -I/usr/include/druntime -I/usr/local/include/d -I`pwd`'
