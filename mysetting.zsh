@@ -10,14 +10,14 @@ HISTFILE=~/.zsh_history
 setopt extended_history
 setopt share_history
 
-export VISUAL="emacsclient -a emacs"
-export EDITOR="emacsclient -a emacs"
+export VISUAL="emacsclient"
+export EDITOR="emacsclient"
 
 export PAGER="less"
 #less add color view
 export LESS='-R'
 
-export LESSOPEN="|src-hilite-lesspipe.sh %s|nkf -w -Lu -d -x"
+export LESSOPEN="|src-hilite-lesspipe.sh %s"
 
 #auto ls when cd
 function chpwd() {ls --color=auto -hFAvi -li -a}
