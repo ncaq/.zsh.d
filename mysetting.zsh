@@ -16,8 +16,7 @@ export EDITOR="emacsclient"
 export PAGER="less"
 #less add color view
 export LESS='-R'
-
 export LESSOPEN="|src-hilite-lesspipe.sh %s"
 
 #auto ls when cd
-function chpwd() {ls --color=auto -hFAvi -li -a}
+function chpwd() {ls --color=auto -hFAv}

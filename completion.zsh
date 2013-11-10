@@ -1,7 +1,5 @@
 #zsh-completions用の設定
 fpath=(/home/ncaq/Documents/tool/zsh-completions/src $fpath)
-autoload -U compinit
-compinit -u
 #スペル訂正時にDVORAK配列を前提にする
 setopt dvorak
 #スペル訂正は時に鬱陶しい
@@ -42,3 +40,5 @@ zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 # キャッシュを使って速くする
 zstyle ':completion:*' use-cache true
+
+autoload -U compinit
