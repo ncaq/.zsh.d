@@ -22,7 +22,18 @@ function percol-search-locate() {
             echo $SELECTED_FILE | sed 's/ /\\ /g'
         fi
     else
-        bultin locate
+        locate
     fi
 }
 alias op='percol-search-locate'
+
+function percol-locate-cd()
+{
+    local temp
+    temp=$(locate ""|percol)
+    local dir
+    dir=dirname $temp
+    return $dir
+}
+
+alias oc='percol-locate-cd'
