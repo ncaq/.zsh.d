@@ -1,3 +1,10 @@
+function percol-locate-cd()
+{
+    cd `locate --null ""|xargs --null dirname|uniq|percol --query="$*"`
+}
+
+alias oc='percol-locate-cd'
+
 #https://gist.github.com/mitukiii/4234173
 function percol-select-history() {
     local tac
@@ -14,26 +21,3 @@ function percol-select-history() {
 }
 zle -N percol-select-history
 bindkey '^r' percol-select-history
-
-function percol-search-locate() {
-    if [ $# -ge 1 ]; then
-        SELECTED_FILE=$(locate $* | percol)
-        if [ $? -eq 0 ]; then
-            echo $SELECTED_FILE | sed 's/ /\\ /g'
-        fi
-    else
-        locate
-    fi
-}
-alias op='percol-search-locate'
-
-function percol-locate-cd()
-{
-    local temp
-    temp=$(locate ""|percol)
-    local dir
-    dir=dirname $temp
-    return $dir
-}
-
-alias oc='percol-locate-cd'
