@@ -1,7 +1,7 @@
 ZSH_THEME="blinks"
 
 #dircolorで設定
-eval $(dircolors ~/Documents/tool/dircolors-solarized/dircolors.256dark)
+eval $(dircolors ~/Dropbox/portable/dircolors-solarized/dircolors.256dark)
 #補完も同じ色に
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 

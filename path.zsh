@@ -1,4 +1,4 @@
-export PATH="/sbin/:/usr/sbin/:/usr/bin:/usr/games/bin:/home/ncaq/.cabal/bin/:/home/ncaq/Documents/tool:${PATH}"
+export PATH="/sbin/:/usr/sbin/:/usr/bin:/usr/games/bin:/home/ncaq/.cabal/bin/:/home/ncaq/Documents/tool:${PATH}:/home/ncaq/Dropbox/portable"
 
 export LD_LIBRARY_PATH="/lib/:/usr/lib/:/usr/local/lib/:${LD_LIBRARY_PATH}"
 
