@@ -10,7 +10,7 @@ alias ga='git add --all .'
 alias m='sudo emerge -tv'
 alias o='locate -i'
 alias u='sudo updatedb'
-alias udn='sudo emerge -uDNt --with-bdeps=y world'
+alias udn='sudo emerge -uDNt --with-bdeps=y world --keep-going'
 alias z='exec zsh -l'
 
 alias -g e='emacsclient -n'

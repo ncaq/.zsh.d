@@ -1,14 +1,12 @@
-#hasktagsが全部回ってくれる
-alias    hasktagsr='find . -type f -name \*.\*hs -print0 | xargs -0 hasktags -c'
-#abcedのいつもの
-alias    ripcd='abcde -M -a cddb,read,encode,tag,move,replaygain,clean'
 #mozcの設定は妙なパスにある
-alias    mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
-alias    mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
-alias    grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
+alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
+alias mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
+#grub手動で書き込むの面倒
+alias grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
+alias grub-install='sudo grub2-install --target=x86_64-efi'
 #get full path
 alias fullpath='find `pwd` -maxdepth 1 -mindepth 1'
 #mouse mode 0=disable 1=enable
 alias mtoggle='xinput set-int-prop "ImPS/2 Generic Wheel Mouse" "Device Enabled" 8'
-#dcd server
-alias startdcd='dcd-server -I/usr/include/phobos2 -I/usr/include/druntime -I/usr/local/include/d -I`pwd`'
+#virus scan
+alias vscan='clamdscan * -r'
