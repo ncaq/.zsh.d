@@ -18,4 +18,3 @@ function copy-region-as-clip-kill() {
 }
 zle -N copy-region-as-clip-kill
 bindkey '^[w' copy-region-as-clip-kill
-
