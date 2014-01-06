@@ -1,9 +1,5 @@
 #zsh-completions用の設定
 fpath=(/home/ncaq/Dropbox/portable/zsh-completions/src $fpath)
-#スペル訂正時にDVORAK配列を前提にする
-setopt dvorak
-#スペル訂正は時に鬱陶しい
-unsetopt correct_all
 
 #コマンド履歴検索にフィルタを
 autoload history-search-end
@@ -41,4 +37,4 @@ zstyle ':completion:*:manuals' separate-sections true
 # キャッシュを使って速くする
 zstyle ':completion:*' use-cache true
 
-autoload -U compinit
+compinit -d "${ZSH_COMPDUMP}"
