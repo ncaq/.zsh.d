@@ -1,7 +1,7 @@
 #some more ls aliases
-alias ls='ls --color=auto   -AFhv'
-alias  l='ls --color=auto   -AFhv -l'
-alias le='ls --color=always -AFhv -l|less -N'
+alias ls='\ls --color=auto   -AFhv'
+alias  l='\ls --color=auto   -AFhv -l'
+alias le='\ls --color=always -AFhv -l|less -N'
 
 #mozcの設定は妙なパスにある
 alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'

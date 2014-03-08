@@ -37,4 +37,4 @@ zstyle ':completion:*:manuals' separate-sections true
 # キャッシュを使って速くする
 zstyle ':completion:*' use-cache true
 
-compinit -d "${ZSH_COMPDUMP}"
+autoload compinit
