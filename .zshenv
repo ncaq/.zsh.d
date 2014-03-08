@@ -10,5 +10,9 @@ export EDITOR="emacsclient"
 export VISUAL=$EDITOR
 export SUDO_EDITOR=$EDITOR
 
-#auto ls when cd
-function chpwd() {ls}
+export PATH="\
+$PATH\
+:/usr/sbin\
+:/home/ncaq/Documents/tool\
+:/home/ncaq/Dropbox/portable\
+"

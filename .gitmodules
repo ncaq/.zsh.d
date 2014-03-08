@@ -1,0 +1,6 @@
+[submodule "sub/dircolors-solarized"]
+	path = sub/dircolors-solarized
+	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "sub/zsh-completions"]
+	path = sub/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git

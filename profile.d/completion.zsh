@@ -1,5 +1,5 @@
 #zsh-completions用の設定
-fpath=(/home/ncaq/Dropbox/portable/zsh-completions/src $fpath)
+fpath=($zsh_sub/zsh-completions/src $fpath)
 
 #コマンド履歴検索にフィルタを
 autoload history-search-end
@@ -32,9 +32,10 @@ zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAU
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
 # セパレータを設定する
-zstyle ':completion:*' list-separator '-->'
+zstyle ':completion:*' list-separator '->'
 zstyle ':completion:*:manuals' separate-sections true
 # キャッシュを使って速くする
 zstyle ':completion:*' use-cache true
 
-autoload compinit
+autoload -U compinit
+compinit -d /tmp/$USER.zcompdump

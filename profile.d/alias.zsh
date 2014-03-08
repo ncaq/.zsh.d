@@ -1,7 +1,6 @@
-#some more ls aliases
-alias ls='\ls --color=auto   -AFhv'
-alias  l='\ls --color=auto   -AFhv -l'
-alias le='\ls --color=always -AFhv -l|less -N'
+#trash
+alias -g trash='gvfs-trash'
+alias -g trash-empty='rm -r ~/.local/share/Trash'
 
 #mozcの設定は妙なパスにある
 alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
@@ -15,8 +14,5 @@ alias fullpath='find `pwd` -maxdepth 1'
 alias mtoggle='xinput set-int-prop "ImPS/2 Generic Wheel Mouse" "Device Enabled" 8'
 #virus scan
 alias vscan='clamdscan * -r'
-#trash
-alias -g trash='gvfs-trash'
-alias -g trash-empty='rm -r ~/.local/share/Trash'
 #process
 alias pa='ps aux|ag'

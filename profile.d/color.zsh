@@ -1,9 +1,4 @@
-ZSH_THEME="blinks"
-
 #dircolorで設定
-eval $(dircolors ~/Dropbox/portable/dircolors-solarized/dircolors.256dark)
+eval $(dircolors $zsh_sub/dircolors-solarized/dircolors.256dark)
 #補完も同じ色に
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-alias tree="tree -C"
-alias eix='eix -F'
