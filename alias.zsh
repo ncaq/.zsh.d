@@ -15,3 +15,8 @@ alias fullpath='find `pwd` -maxdepth 1'
 alias mtoggle='xinput set-int-prop "ImPS/2 Generic Wheel Mouse" "Device Enabled" 8'
 #virus scan
 alias vscan='clamdscan * -r'
+#trash
+alias -g trash='gvfs-trash'
+alias -g trash-empty='rm -r ~/.local/share/Trash'
+#process
+alias pa='ps aux|ag'
