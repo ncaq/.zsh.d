@@ -4,7 +4,7 @@ alias le='\ls --color=always -AFhv -l|less -N'
 
 alias -g e='emacsclient --no-wait'
 alias -g n='xdg-open'
-alias -g p='less -N'
+alias -g p='less'
 alias -g t='noglob gvfs-trash'
 
 alias a='sudo dispatch-conf'
