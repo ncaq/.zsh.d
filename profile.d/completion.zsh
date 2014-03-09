@@ -3,7 +3,7 @@ fpath=($ZDOTDIR/sub/zsh-completions/src $fpath)
 
 #http://d.hatena.ne.jp/tsaka/20060923/1158993348
 #0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる
-LISTMAX=0
+export LISTMAX=0
 
 #補完候補を詰めて表示する
 setopt list_packed
