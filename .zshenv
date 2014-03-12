@@ -1,6 +1,6 @@
 export ZDOTDIR=~/.zsh.d
 
-export PATH=$PATH:/usr/sbin:/home/ncaq/Documents/tool:/home/ncaq/Dropbox/portable
+export PATH=$PATH:/sbin:/usr/sbin:/home/ncaq/Documents/tool:/home/ncaq/Dropbox/portable
 
 fpath=($ZDOTDIR/autoload/ $fpath)
 

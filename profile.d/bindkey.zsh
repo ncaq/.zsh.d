@@ -1,5 +1,6 @@
 bindkey -s '\el' "l\n"
 
+bindkey "^[[Z" reverse-menu-complete #Shift-Tabで補完候補を逆順する("\e[Z"でも動作する) http://d.hatena.ne.jp/oovu70/20120405/p1
 bindkey '^r' percol-select-history
 
 #ansi-term対策

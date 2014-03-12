@@ -1,19 +1,11 @@
 #zsh-completions用の設定
 fpath=($ZDOTDIR/sub/zsh-completions/src $fpath)
 
-#http://d.hatena.ne.jp/tsaka/20060923/1158993348
-#0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる
-export LISTMAX=0
+export LISTMAX=0 #0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
 
-#補完候補を詰めて表示する
-setopt list_packed
-#補完候補の表示をls -Fのようにする
-setopt list_types
-#.から始まるファイルも展開する
-setopt glob_dots
-
-autoload -U compinit
-compinit -d /tmp/$USER.zcompdump
+setopt list_packed #補完候補を詰めて表示する
+setopt list_types #補完候補の表示をls -Fのようにする
+setopt globdots #.から始まるファイルも展開する
 
 #補完の情報を増やす
 #http://qiita.com/PSP_T/items/ed2d36698a5cc314557d
@@ -30,3 +22,6 @@ zstyle ':completion:*' list-separator '->'
 zstyle ':completion:*:manuals' separate-sections true
 # キャッシュを使って速くする
 zstyle ':completion:*' use-cache true
+
+autoload -U compinit
+compinit -u -d $ZDOTDIR/.zcompcache/$USER.zcompdump
