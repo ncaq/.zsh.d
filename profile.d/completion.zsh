@@ -20,10 +20,8 @@ zstyle ':completion:*' group-name ''
 # セパレータを設定する
 zstyle ':completion:*' list-separator '->'
 zstyle ':completion:*:manuals' separate-sections true
-# キャッシュを使って速くする
-zstyle ':completion:*' use-cache true
 
 zstyle ':completion:*:processes' command 'ps ax -o pid,s,args' #processIDを得るためのコマンドを指定
 
 autoload -U compinit
-compinit -u -d $ZDOTDIR/.zcompcache/$USER.zcompdump
+compinit -u -d /tmp/$USER.zcompdump
