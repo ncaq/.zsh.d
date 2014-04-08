@@ -1,0 +1,5 @@
+#!/bin/zsh
+#https://gist.github.com/mitukiii/4234173
+BUFFER=$(history -n 1 | tac | percol)
+CURSOR=$#BUFFER
+zle clear-screen

@@ -1,2 +1,0 @@
-#!/bin/zsh
-cd `locate --null ""|xargs --null dirname|uniq|percol --query="$*"`
