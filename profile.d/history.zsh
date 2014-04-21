@@ -1,5 +1,5 @@
 export HISTFILE=~/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=1000000
 export SAVEHIST=1000000
 
 setopt extendedhistory #開始時刻と,実行時間を記録する
