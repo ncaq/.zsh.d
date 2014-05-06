@@ -1,6 +1,5 @@
 #!/bin/zsh
 #https://gist.github.com/mitukiii/4234173
-#ソートはいつか削除する
-BUFFER=$(history -n 1|tac|sort|uniq|percol)
+BUFFER=$(history -n 1|tac|percol)
 CURSOR=$#BUFFER
 zle clear-screen
