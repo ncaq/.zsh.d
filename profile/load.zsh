@@ -1,3 +1,5 @@
+setopt autopushd
+
 source /etc/profile.d/autojump.zsh
 
 autoload history-search-end
