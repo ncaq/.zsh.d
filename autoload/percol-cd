@@ -1,3 +1,0 @@
-#!/bin/zsh
-cd `find /bin /boot /etc /home /lib32 /lib64 /mnt /opt /sbin /tmp /usr /var -type d 2>/dev/null | percol`
-zle clear-screen
