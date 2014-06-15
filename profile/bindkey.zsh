@@ -12,4 +12,5 @@ bindkey "^h" backward-char
 bindkey "^n" history-beginning-search-forward-end
 bindkey "^s" forward-char
 bindkey "^t" history-beginning-search-backward-end
+bindkey '^f' percol-subfind
 bindkey '^r' percol-history
