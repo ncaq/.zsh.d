@@ -26,7 +26,7 @@ alias grub-install='sudo mount /boot/efi && mkdirhier ~/backup/efi/ && tar cvfa 
 alias grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
 alias gs='git status'
 alias gu='git pull'
-alias hsr='ghc -fllvm -O2 --threaded -Wall -Werror'
+alias hsr='ghc -fllvm -O2 -threaded -Wall -Werror -outputdir /tmp'
 alias m='sudo emerge -tv'
 alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
