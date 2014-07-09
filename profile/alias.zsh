@@ -4,7 +4,7 @@ alias le='\ls --color=always -aFhv -l|less -N'
 
 alias -g ag='ag -i'
 alias -g e='emacsclient --no-wait'
-alias -g make='make -j8'
+alias -g make='make -j6'
 alias -g nkfu='nkf -w -x -Lu -d'
 alias -g p='less'
 alias -g t='mv --backup=numbered --target-directory=${HOME}/trash'
