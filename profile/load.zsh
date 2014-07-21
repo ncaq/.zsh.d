@@ -12,7 +12,9 @@ zle -N percol-subfind
 
 autoload pr
 
-source ~/.zsh.d/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ];then
+    source sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 if [ -f "/etc/profile.d/autojump.zsh" ];then
     source /etc/profile.d/autojump.zsh
