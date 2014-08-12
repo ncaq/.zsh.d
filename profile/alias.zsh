@@ -3,6 +3,7 @@ alias  l='\ls --color=auto   -aFhv -l'
 alias le='\ls --color=always -aFhv -l|less -N'
 
 alias -g ag='ag -i'
+alias -g agp='ag --pager less'
 alias -g e='emacsclient --no-wait'
 alias -g make='make -j6'
 alias -g nkfu='nkf -w -x -Lu -d'
