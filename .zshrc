@@ -1,4 +1,4 @@
-export PATH=$PATH:/sbin:/usr/sbin:~/Documents/tool:~/Desktop/processing
+export PATH=$PATH:/sbin:/usr/sbin:~/Desktop/tool:~/Desktop/processing
 
 export ZDOTDIR=~/.zsh.d
 
