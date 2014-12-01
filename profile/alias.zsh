@@ -4,7 +4,7 @@ alias le='\ls --color=always --all --classify --human-readable --group-directori
 
 alias -g ag='ag -i'
 alias -g agp='ag --pager less'
-alias -g e='emacsclient --no-wait'
+alias -g e='emacsclient --no-wait -a emacs'
 alias -g make='make -j6'
 alias -g nkfu='nkf -w -x -Lu -d'
 alias -g p='less'

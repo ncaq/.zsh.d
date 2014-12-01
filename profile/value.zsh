@@ -1,4 +1,4 @@
-export EDITOR=emacsclient
+export EDITOR='emacsclient -a emacs'
 export VISUAL=$EDITOR
 
 export PAGER=less
