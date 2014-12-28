@@ -1,6 +1,6 @@
-alias ls='\ls --color=auto --almost-all --classify --human-readable -v'
-alias  l='\ls --color=auto --all --classify --human-readable -v -l'
-alias le='\ls --color=always --all --classify --human-readable -v -l|less -N'
+alias ls='\ls --color=auto   --all --classify --human-readable --group-directories-first --dereference -v'
+alias  l='\ls --color=auto   --all --classify --human-readable --group-directories-first --dereference -v -l'
+alias le='\ls --color=always --all --classify --human-readable --group-directories-first --dereference -v -l|less -N'
 
 alias -g ag='ag -i'
 alias -g agp='ag --pager less'
