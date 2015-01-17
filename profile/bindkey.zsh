@@ -1,6 +1,6 @@
 stty stop undef
 
-bindkey -s '\el' "l\n"
+bindkey -s '\el' "ll\n"
 
 bindkey "^[[Z" reverse-menu-complete #Shift-Tabで補完候補を逆順する("\e[Z"でも動作する) http://d.hatena.ne.jp/oovu70/20120405/p1
 bindkey "^[b" backward-kill-word
