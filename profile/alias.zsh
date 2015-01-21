@@ -52,6 +52,7 @@ alias sdr='sudo systemctl restart'
 alias sds='sudo systemctl status'
 alias sdu='sudo systemctl list-unit-files'
 alias speexenc-high-all='parallel -j +0 speexenc -V --quality 10 --comp 10 --vbr {} {.}.spx ::: *.wav'
+alias sqlite-clean='find . -iname "*.sqlite"|parallel -n 1 "sqlite3 {} \"vacuum;reindex;\""'
 alias tree="tree -C"
 alias u='updatedb'
 alias voicememo='arecord -t raw -f S16_LE -r 32000|speexenc --vbr --rate 32000 --le --16bit - `date --iso-8601`.spx'
