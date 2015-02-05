@@ -8,17 +8,16 @@ if [ -f "/etc/profile.d/autojump.zsh" ];then
     source /etc/profile.d/autojump.zsh
 fi
 
-autoload history-search-end
+autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
-autoload percol-history
+autoload -U percol-history
 zle -N percol-history
 
-autoload percol-subfind
+autoload -U percol-subfind
 zle -N percol-subfind
 
-autoload pr
-
-autoload locate-current-dir
-autoload locate-current-dir-null
+autoload -U locate-current-dir
+autoload -U locate-current-dir-null
+autoload -U pr
