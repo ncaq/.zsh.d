@@ -1,7 +1,6 @@
-alias ls='\ls --color=auto   --almost-all --classify --human-readable --sort=version'
-alias ll='\ls --color=auto   --all        --classify --human-readable --sort=version --group-directories-first --dereference -l'
-alias la='\ls --color=auto   --all        --classify --human-readable --sort=version -l'
-alias le='\ls --color=always --all        --classify --human-readable --sort=version -l|less -N'
+alias ls='ls-first-ln-dir --color=auto --classify --human-readable'
+alias le='ll --color=always|less -N'
+alias ll='ls -l'
 
 alias -g ag='ag -i'
 alias -g agp='ag --pager less'
