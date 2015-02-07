@@ -1,6 +1,6 @@
-alias ls='ls-first-ln-dir --color=auto --classify --human-readable'
+alias ls='ls-first-ln-dir --color=auto --classify --human-readable --almost-all'
+alias ll='ls-first-ln-dir --color=auto --classify --human-readable --all -l'
 alias le='ll --color=always|less -N'
-alias ll='ls -l'
 
 alias -g ag='ag -i'
 alias -g agp='ag --pager less'
