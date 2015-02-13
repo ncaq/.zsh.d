@@ -40,7 +40,7 @@ alias sdr='sudo systemctl restart'
 alias sds='sudo systemctl status'
 alias sdu='sudo systemctl list-unit-files'
 alias speexenc-high-all='parallel --verbose --jobs 100% speexenc -V --quality 10 --comp 10 --vbr {} {.}.spx ::: *.wav'
-alias sqlite-vacuum-reindex='locate-current-dir-null|parallel --null "file"|ag --literal --case-sensitive "SQLite 3.x"|cut -d: -f1|parallel --verbose --jobs 100% --max-args=1 "sqlite3 {} \"vacuum;reindex;\""'
+alias sqlite-vacuum-reindex='find -L . -print0|parallel --jobs 100% --null "file"|ag --literal --case-sensitive "SQLite 3.x"|cut -d: -f1|parallel --verbose --jobs 100% --max-args=1 "sqlite3 {} \"vacuum;reindex;\""'
 alias tree="tree -C"
 alias voicememo='arecord -t raw -f S16_LE -r 32000|speexenc --vbr --rate 32000 --le --16bit - `date --iso-8601`.spx'
 alias vscan='clamdscan * -r'
