@@ -27,7 +27,7 @@ alias sdu='sudo systemctl list-unit-files'
 
 alias -g e='emacsclient --no-wait -a emacs'
 alias -g p='less'
-alias -g t='mv --backup=numbered --target-directory=${HOME}/trash'
+alias -g t='gvfs-trash'
 
 alias a='aunpack'
 alias c='cd ~/Documents/log/`date +"%Y_%m"`'
