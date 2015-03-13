@@ -1,5 +1,5 @@
-alias -g ls='ls-first-ln-dir --color=auto --classify --human-readable --almost-all'
-alias -g ll='ls-first-ln-dir --color=auto --classify --human-readable --all -l'
+alias -g ls='ls --color=auto --classify --human-readable --group-directories-first --sort=version --almost-all'
+alias -g ll='ls --color=auto --classify --human-readable --group-directories-first --sort=version --all -l'
 
 function le()
 {
