@@ -1,5 +1,3 @@
-export PATH=$PATH:/sbin:/usr/sbin
-
 export ZDOTDIR=~/.zsh.d
 
 fpath=($ZDOTDIR/autoload/ $fpath)
