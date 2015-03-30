@@ -5,4 +5,4 @@ export VISUAL=$EDITOR
 
 export PAGER=less
 export LESS=-Ri
-export LESSHISTFILE=-
+export LESSHISTFILE=/tmp/.lesshst
