@@ -29,7 +29,6 @@ alias -g e='emacsclient --no-wait -a emacs'
 alias -g p='less'
 alias -g t='gvfs-trash'
 
-alias a='aunpack'
 alias c='cd ~/Documents/log/`date +"%Y_%m"`'
 alias d='sudo dispatch-conf'
 alias m='sudo emerge -v'
