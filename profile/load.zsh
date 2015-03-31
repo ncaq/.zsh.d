@@ -4,7 +4,7 @@ if [ -f "$ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ];the
     source $ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-if [ -f "/etc/profile.d/autojump.zsh" ];then
+if [ -f '/etc/profile.d/autojump.zsh' ];then
     source /etc/profile.d/autojump.zsh
 fi
 
