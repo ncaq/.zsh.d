@@ -31,7 +31,7 @@ alias -g t='gvfs-trash'
 
 alias c='cd ~/Documents/log/`date +"%Y_%m"`'
 alias d='sudo dispatch-conf'
-alias m='sudo emerge -v'
+alias m='sudo emerge'
 alias o='xdg-open'
 alias u='updatedb'
 alias x='gtk-launch'
