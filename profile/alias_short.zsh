@@ -21,7 +21,7 @@ alias eqk='equery --no-pipe k'
 alias eql='equery --no-pipe l'
 alias eqm='equery --no-pipe m'
 alias eqs='equery --no-pipe s'
-alias equ='equery --no-pipe u'
+alias equ='equery --no-pipe u --ignore-linguas'
 alias eqw='equery --no-pipe w'
 alias eqy='equery --no-pipe y'
 
