@@ -10,7 +10,7 @@ alias -g nkfu='nkf -w -x -Lu'
 alias -g nkfw='nkf -w -x -Lu --overwrite'
 
 alias agp='ag --pager less'
-alias emerge-rebuild='sudo emerge -tv @live-rebuild @module-rebuild @preserved-rebuild'
+alias emerge-rebuild='sudo emerge @live-rebuild @module-rebuild @preserved-rebuild'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias gctags='gtags --gtagslabel=ctags'
