@@ -1,2 +1,0 @@
-#!/bin/zsh
-processing-java --force --sketch=$1 --run --output=/tmp/$1
