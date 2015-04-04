@@ -1,5 +1,6 @@
 #!/bin/zsh
 #https://gist.github.com/mitukiii/4234173
+
 BUFFER=$(history -r -n 1|uniq-deep|percol --prompt-bottom --result-bottom-up)
 CURSOR=$#BUFFER
 zle clear-screen
