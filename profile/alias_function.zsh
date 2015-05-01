@@ -13,6 +13,7 @@ alias emerge-rebuild='sudo emerge @live-rebuild @module-rebuild @preserved-rebui
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
+alias month-archive='mv -i ~/Documents/current ~/Documents/archive/$(date +"%Y-%m" --date "-1 month") && mkdir ~/Documents/current'
 alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
 alias random-int='cat /dev/urandom|od -t dI|cut --delimiter=" " -f2-|xargs|tr " " "\n"|head -n'
