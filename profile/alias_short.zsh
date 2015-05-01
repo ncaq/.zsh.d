@@ -44,7 +44,6 @@ alias -g e='emacsclient --no-wait -a emacs'
 alias -g p='less'
 alias -g t='gvfs-trash'
 
-alias c='cd ~/Documents/log/`date +"%Y-%m"`'
 alias d='sudo dispatch-conf'
 alias m='sudo emerge'
 alias o='xdg-open'
