@@ -44,6 +44,9 @@ alias -g e='emacsclient --no-wait -a emacs'
 alias -g p='less'
 alias -g t='gvfs-trash'
 
+alias agp='ag --pager less'
+alias pa='ps aux|ag'
+
 alias d='sudo dispatch-conf'
 alias m='sudo emerge'
 alias o='xdg-open'
