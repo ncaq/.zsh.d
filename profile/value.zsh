@@ -1,4 +1,4 @@
-export PATH=$PATH:/sbin:/usr/sbin:~/Desktop/tool:~/.cabal/bin
+export PATH=$PATH:/sbin:/usr/sbin:~/.cabal/bin
 
 export EDITOR='emacsclient -a emacs'
 export VISUAL=$EDITOR
