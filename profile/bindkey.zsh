@@ -8,9 +8,9 @@ bindkey '^[h' backward-word
 bindkey '^[s' forward-word
 bindkey '^[t' history-search-backward
 bindkey '^b' backward-delete-char
+bindkey '^f' percol-subfind
 bindkey '^h' backward-char
 bindkey '^n' history-beginning-search-forward-end
+bindkey '^r' percol-history
 bindkey '^s' forward-char
 bindkey '^t' history-beginning-search-backward-end
-bindkey '^f' percol-subfind
-bindkey '^r' percol-history
