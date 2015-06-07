@@ -5,6 +5,7 @@ alias fr='locate -i --regex'
 
 alias ga='git add --all .'
 alias gc='git commit -v'
+alias gn='git clean -dxi'
 alias gp='git push'
 alias gr='git reset --hard HEAD'
 alias gs='git status'
