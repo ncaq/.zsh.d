@@ -48,6 +48,7 @@ alias -g t='gvfs-trash'
 alias agp='ag --pager less'
 alias pa='ps aux|ag'
 
+alias c='cd ~/Documents/archive/$(date +"%Y-%m")/'
 alias d='sudo dispatch-conf'
 alias m='sudo emerge'
 alias o='xdg-open'
