@@ -1,4 +1,5 @@
 setopt autopushd
+setopt extended_glob
 
 if [ -f "$ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ];then
     source $ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
