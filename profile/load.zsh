@@ -1,4 +1,5 @@
 setopt autopushd
+setopt correct
 setopt extended_glob
 
 if [ -f "$ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ];then
@@ -21,4 +22,3 @@ zle -N percol-subfind
 
 autoload -U locate-current-dir
 autoload -U locate-current-dir-null
-autoload -U pr
