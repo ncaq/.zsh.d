@@ -1,7 +1,7 @@
 function copy-region-as-kill-clipboard ()
 {
     zle copy-region-as-kill
-    echo $CUTBUFFER|xsel --clipboard --input --logfile /tmp/$USER.xsel.log
+    echo -n $CUTBUFFER|xsel --clipboard --input --logfile /tmp/$USER.xsel.log
 }
 
 zle -N copy-region-as-kill-clipboard
