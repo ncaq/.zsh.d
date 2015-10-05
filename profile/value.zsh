@@ -1,4 +1,4 @@
-export PATH=$PATH:/sbin:/usr/sbin:~/.cabal/bin:$(find ~/.gem/ -regex '.*\.gem/ruby/[^/]*/bin$' 2>/dev/null|tr '\n' ':')
+export PATH=$PATH:/sbin:/usr/sbin:~/.cabal/bin
 
 export EDITOR='emacsclient -a emacs'
 export VISUAL=$EDITOR
