@@ -5,7 +5,7 @@ export LISTMAX=0                # 0にすると､ウィンドウを超えて出
 setopt globdots                 # .から始まるファイルも展開する
 setopt list_packed              # 補完候補を詰めて表示する
 setopt list_types               # 補完候補の表示をls -Fのようにする
-setopt numericglobsort          # 数字補完リストを数値としてソートする
+setopt numeric_glob_sort        # 数字補完リストを数値としてソートする
 
 # 補完の情報を増やす
 # http://qiita.com/PSP_T/items/ed2d36698a5cc314557d
