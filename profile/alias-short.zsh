@@ -32,7 +32,6 @@ alias off='systemctl poweroff'
 alias reb='systemctl reboot'
 
 alias sdb='sudo journalctl -b'
-
 alias sdd='sudo systemctl disable'
 alias sde='sudo systemctl enable'
 alias sdf='sudo systemctl --failed --all'
@@ -56,4 +55,4 @@ alias m='sudo emerge'
 alias o='xdg-open'
 alias u='sudo updatedb'
 alias x='gtk-launch'
-alias z='exec zsh -l'
+alias z='exec zsh'
