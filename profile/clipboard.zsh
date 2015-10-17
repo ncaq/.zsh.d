@@ -20,7 +20,7 @@ bindkey "^W" kill-region-clipboard
 function copy-region-as-kill-clipboard ()
 {
     zle copy-region-as-kill
-    echo -n $CUTBUFFER|xsel --clipboard --input --logfile /tmp/$USER.xsel.log
+    copy-cutbuffer-to-clipboard
 }
 
 zle -N copy-region-as-kill-clipboard
