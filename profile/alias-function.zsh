@@ -1,13 +1,10 @@
-alias -g ls='ls --color=auto --classify --human-readable --group-directories-first --sort=version --almost-all'
-alias -g ll='ls --color=auto --classify --human-readable --group-directories-first --sort=version --all -l'
+alias ll='ls --color=auto --classify --human-readable --group-directories-first --sort=version --all -l'
+alias ls='ls --color=auto --classify --human-readable --group-directories-first --sort=version --almost-all'
 
 function le()
 {
     ll --color=always $@|less -N
 }
-
-alias -g nkfu='nkf -w -x -Lu'
-alias -g nkfw='nkf -w -x -Lu --overwrite'
 
 alias emerge-rebuild='sudo emerge --backtrack=100 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
 alias fullpath='find -L `pwd` -maxdepth 1'
@@ -17,6 +14,8 @@ alias metaflac-add-replay-gain-all="find . -type d -print0|parallel --no-notice 
 alias month-update='cd ~/Documents && unlink current && mkdir archive/$(date +"%Y-%m") && ln -s archive/$(date +"%Y-%m") current'
 alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
+alias nkfu='nkf -w -x -Lu'
+alias nkfw='nkf -w -x -Lu --overwrite'
 alias random-int='cat /dev/urandom|od -t dI|cut --delimiter=" " -f2-|xargs|tr " " "\n"|head -n'
 alias speexenc-high-all='parallel --verbose --jobs 100% speexenc -V --quality 10 --comp 10 --vbr {} {.}.spx ::: *.wav'
 alias sqlite-vacuum='find -L . -print0|parallel --jobs 100% --null "file"|ag "SQLite 3.x"|cut -d: -f1|parallel --verbose --jobs 100% "sqlite3 {} \"vacuum;reindex;\""'
