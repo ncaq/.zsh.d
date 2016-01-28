@@ -1,6 +1,6 @@
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 setopt extended_history         # 開始時刻と実行時間を記録する
 setopt hist_ignore_dups         # 連続する重複コマンドを記録しない

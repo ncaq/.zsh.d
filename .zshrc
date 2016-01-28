@@ -1,4 +1,4 @@
-export ZDOTDIR=~/.zsh.d
+ZDOTDIR=~/.zsh.d
 
 fpath=($ZDOTDIR/autoload/ $fpath)
 
