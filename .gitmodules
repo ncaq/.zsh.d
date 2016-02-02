@@ -1,9 +1,9 @@
-[submodule "sub/dircolors-solarized"]
-	path = sub/dircolors-solarized
+[submodule "lib/dircolors-solarized"]
+	path = lib/dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule "sub/zsh-completions"]
-	path = sub/zsh-completions
+[submodule "lib/zsh-completions"]
+	path = lib/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "sub/zsh-syntax-highlighting"]
-	path = sub/zsh-syntax-highlighting
+[submodule "lib/zsh-syntax-highlighting"]
+	path = lib/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

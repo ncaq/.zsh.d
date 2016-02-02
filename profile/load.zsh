@@ -16,8 +16,8 @@ zle -N percol-history
 autoload -U percol-subfind
 zle -N percol-subfind
 
-if [ -f "$ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ];then
-    source $ZDOTDIR/sub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "$ZDOTDIR/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ];then
+    source $ZDOTDIR/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 if [ -f '/etc/profile.d/autojump.zsh' ];then
