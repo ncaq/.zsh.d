@@ -1,4 +1,4 @@
-fpath=($ZDOTDIR/lib/zsh-completions/src $fpath)
+fpath=($ZDOTDIR/lib/zsh-completions/src $ZDOTDIR/lib/gentoo-zsh-completions/src $fpath)
 
 LISTMAX=0                # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
 
