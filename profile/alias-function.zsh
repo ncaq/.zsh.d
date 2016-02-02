@@ -6,7 +6,7 @@ function le()
     ll --color=always $@|less -N
 }
 
-alias emerge-rebuild='sudo emerge --backtrack=100 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
+alias emerge-rebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias grub-update='sudo grub2-mkconfig -o /boot/grub/grub.cfg'
