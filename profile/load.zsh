@@ -18,6 +18,4 @@ zle -N percol-subfind
 
 source $ZDOTDIR/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-if [ -f '/etc/profile.d/autojump.zsh' ];then
-    source /etc/profile.d/autojump.zsh
-fi
+[ -f '/etc/profile.d/autojump.sh' ] && source /etc/profile.d/autojump.sh
