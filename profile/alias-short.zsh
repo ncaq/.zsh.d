@@ -40,6 +40,7 @@ alias sdk='sudo systemctl stop'
 alias sdl='sudo systemctl daemon-reload'
 alias sdr='sudo systemctl restart'
 alias sds='sudo systemctl status'
+alias sdt='sudo systemctl list-timers'
 alias sdu='sudo systemctl list-unit-files'
 
 alias agp='ag --pager less'
