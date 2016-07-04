@@ -1,2 +1,0 @@
-#!/bin/zsh
-locate --ignore-case --regex "^$(pwd).*$@.*"

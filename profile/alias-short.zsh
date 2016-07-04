@@ -1,7 +1,5 @@
-alias f='locate -i'
+alias f='locate --ignore-case'
 alias ff='locate-current-dir'
-alias ffn='locate-current-dir-null'
-alias fr='locate -i --regex'
 
 alias ga='git add --all .'
 alias gc='git commit -v'

@@ -3,9 +3,6 @@ setopt autopushd                # ディレクトリを自動で記録
 setopt correct                  # 入力ミス自動修正
 setopt extended_glob            # 拡張glob
 
-autoload -U locate-current-dir
-autoload -U locate-current-dir-null
-
 autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end

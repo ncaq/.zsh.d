@@ -1,9 +1,12 @@
-alias ll='ls --color=auto --classify --human-readable --group-directories-first --sort=version --all -l'
 alias ls='ls --color=auto --classify --human-readable --group-directories-first --sort=version --almost-all'
+alias ll='ls --all -l'
 
-function le()
-{
+le() {
     ll --color=always $@|less -N
+}
+
+locate-current-dir() {
+    locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
 alias emerge-rebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
