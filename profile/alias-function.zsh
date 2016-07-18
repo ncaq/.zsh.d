@@ -6,7 +6,7 @@ le() {
 }
 
 locate-current-dir() {
-    locate --ignore-case --regex '^$(pwd).*$1.*' ${@[2, -1]}
+    locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
 alias emerge-rebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
