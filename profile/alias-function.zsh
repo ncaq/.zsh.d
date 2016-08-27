@@ -9,7 +9,6 @@ locate-current-dir() {
     locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
-alias emerge-rebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --jobs 100% --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull"'
@@ -20,6 +19,9 @@ alias mkbackup='sudo mksquashfs /boot /etc /home /opt /root /usr/local /var $(da
 alias month-update='cd ~/Documents && unlink current && mkdir archive/$(date +"%Y-%m") && ln -s archive/$(date +"%Y-%m") current'
 alias mozc-config='/usr/lib/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/lib/mozc/mozc_tool --mode=dictionary_tool'
+alias mrebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
+alias mudn='sudo emerge -uDN world'
+alias mudnbw='sudo emerge -uDN --backtrack=30 --with-bdeps=y world'
 alias nkfu='nkf -w -x -Lu'
 alias nkfw='nkf -w -x -Lu --overwrite'
 alias random-int='cat /dev/urandom|od -t dI|cut --delimiter=" " -f2-|xargs|tr " " "\n"|head -n'
