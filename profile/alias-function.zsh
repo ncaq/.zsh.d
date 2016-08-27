@@ -12,6 +12,7 @@ locate-current-dir() {
 alias emerge-rebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
+alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --jobs 100% --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull"'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias metaflac-add-replay-gain-all='find . -type d -print0|parallel --no-notice --jobs 100% --null --keep-order "metaflac --add-replay-gain {}/*.flac"'
 alias mk-dev-null='sudo rm /dev/null && sudo mknod -m 666 /dev/null c 1 3'
