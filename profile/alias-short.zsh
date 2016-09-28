@@ -29,7 +29,6 @@ alias eqy='equery --no-pipe y'
 alias off='systemctl poweroff'
 alias reb='systemctl reboot'
 
-alias sdb='sudo journalctl -b'
 alias sdd='sudo systemctl disable'
 alias sde='sudo systemctl enable'
 alias sdf='sudo systemctl --failed --all'
@@ -40,6 +39,9 @@ alias sdr='sudo systemctl restart'
 alias sds='sudo systemctl status'
 alias sdt='sudo systemctl list-timers'
 alias sdu='sudo systemctl list-unit-files'
+
+alias jb='sudo journalctl -b'
+alias je='sudo journalctl -e'
 
 alias agp='ag --pager less'
 alias pa='ps aux|ag'
