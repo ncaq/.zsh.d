@@ -9,6 +9,11 @@ locate-current-dir() {
     locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
+pa() {
+    readonly local ps_result=$(ps aux)
+    echo $ps_result|ag $@
+}
+
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --jobs 100% --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull --all"'

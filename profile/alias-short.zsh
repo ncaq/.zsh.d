@@ -44,7 +44,6 @@ alias sdt='sudo systemctl list-timers'
 alias sdu='sudo systemctl list-unit-files'
 
 alias agp='ag --pager less'
-alias pa='ps aux|ag'
 
 alias a='aunpack'
 alias c='cd $(readlink -f ~/Documents/current/)'
