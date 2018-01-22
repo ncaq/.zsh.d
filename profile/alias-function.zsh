@@ -9,7 +9,7 @@ locate-current-dir() {
     locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
-pa() {
+pag() {
     readonly local ps_result=$(ps aux)
     echo $ps_result|ag $@
 }
