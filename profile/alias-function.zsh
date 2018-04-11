@@ -14,6 +14,12 @@ pag() {
     echo $ps_result|ag $@
 }
 
+git-add-file() {
+    git add --all .
+    readonly local files=$(git diff --cached --name-only .|parallel basename|perl6 -e 'lines.join(", ").say')
+    git commit -m "added: ${files}"
+}
+
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull --all"'
