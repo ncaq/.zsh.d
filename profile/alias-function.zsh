@@ -22,6 +22,7 @@ git-add-file() {
 
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
+alias git-daily='git log --all --format="%h %ai %s" --since=$(date +"%Y-%m-%d-00:00:00") --author=$(git config user.email)|xsel --clipboard --input --logfile /dev/null'
 alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull --all"'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias metaflac-add-replay-gain-all='find . -type d -print0|parallel --no-notice --null --keep-order "metaflac --add-replay-gain {}/*.flac"'
