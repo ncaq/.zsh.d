@@ -9,6 +9,7 @@ alias p='less'
 alias t='trash'
 alias u='sudo updatedb'
 alias x='gtk-launch'
+alias y='yarn start'
 alias z='exec zsh'
 
 alias agp='ag --pager less'
