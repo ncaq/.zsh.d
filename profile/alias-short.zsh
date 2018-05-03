@@ -12,8 +12,6 @@ alias x='gtk-launch'
 alias y='yarn start'
 alias z='exec zsh'
 
-alias agp='ag --pager less'
-
 alias eqa='equery --no-pipe a'
 alias eqb='equery --no-pipe b'
 alias eqc='equery --no-pipe c'

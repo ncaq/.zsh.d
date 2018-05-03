@@ -9,9 +9,13 @@ locate-current-dir() {
     locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
-pag() {
+rgp() {
+    rg --pretty $@|less -R
+}
+
+prg() {
     readonly local ps_result=$(ps aux)
-    echo $ps_result|ag $@
+    echo -E $ps_result|rg $@
 }
 
 git-add-file() {
@@ -36,4 +40,4 @@ alias mudnb='sudo emerge -uDN --backtrack=30 world'
 alias mudnbw='sudo emerge -uDN --backtrack=30 --with-bdeps=y world'
 alias nkfu='nkf -w -x -Lu'
 alias nkfw='nkf -w -x -Lu --overwrite'
-alias sqlite-vacuum='locate --null "$(pwd)"|parallel --null "file"|ag "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
+alias sqlite-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
