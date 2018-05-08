@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+world="
+hlint
+intero
+profiteur
+stylish-haskell
+yesod-bin
+"
+
+echo $world|xargs stack install
