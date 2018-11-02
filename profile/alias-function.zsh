@@ -24,6 +24,10 @@ git-add-file() {
     git commit -m "added: ${files}"
 }
 
+oj-dmd() {
+    dmd -debug -g $@ -of=a.out && oj test
+}
+
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
 alias git-daily='git log --all --format="%h %ai %s" --since=$(date +"%Y-%m-%d-00:00:00") --author=$(git config user.email)|xsel --clipboard --input --logfile /dev/null'
