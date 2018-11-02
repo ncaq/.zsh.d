@@ -33,6 +33,7 @@ alias ff='locate-current-dir'
 
 alias ga='git add --all .'
 alias gc='git clean -dxi'
+alias gd='git clone --depth=1'
 alias gf='git-add-file'
 alias gl='git log'
 alias gm='git commit -v -m'
