@@ -13,6 +13,7 @@ autoload -U percol-subfind
 zle -N percol-subfind
 
 autoload -U stack-install-world
+autoload -U yarn-install-world
 
 source $ZDOTDIR/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

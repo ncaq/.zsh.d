@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+set -eux
+
+world="
+babel-cli
+dart-sass
+eslint-cli
+prettier
+tslint
+typescript
+yarn
+"
+
+echo $world|xargs yarn global add
