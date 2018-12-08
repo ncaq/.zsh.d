@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+set -eux
+
+world="
+jsx-lexer
+online-judge-tools
+percol
+"
+
+echo $world|xargs pip install --user
