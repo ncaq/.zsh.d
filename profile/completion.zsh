@@ -1,6 +1,10 @@
-fpath=($ZDOTDIR/lib/zsh-completions/src $ZDOTDIR/lib/gentoo-zsh-completions/src $fpath)
+fpath=(
+    $(rustc --print sysroot)/share/zsh/site-functions
+    $ZDOTDIR/lib/zsh-completions/src
+    $ZDOTDIR/lib/gentoo-zsh-completions/src
+    $fpath)
 
-LISTMAX=0                # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
+LISTMAX=0 # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
 
 setopt globdots                 # .から始まるファイルも展開する
 setopt list_packed              # 補完候補を詰めて表示する
