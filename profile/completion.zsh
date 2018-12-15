@@ -1,4 +1,8 @@
+mkdir -p /tmp/$USER-zsh-completions/
+rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
+
 fpath=(
+    /tmp/$USER-zsh-completions/
     $(rustc --print sysroot)/share/zsh/site-functions
     $ZDOTDIR/lib/zsh-completions/src
     $ZDOTDIR/lib/gentoo-zsh-completions/src
