@@ -5,6 +5,7 @@ set -eux
 world="
 hlint
 intero
+pandoc
 profiteur
 stylish-haskell
 yesod-bin
