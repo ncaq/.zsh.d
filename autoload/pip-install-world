@@ -3,6 +3,7 @@
 set -eux
 
 world="
+awscli
 jsx-lexer
 online-judge-tools
 percol
