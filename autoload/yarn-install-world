@@ -6,6 +6,7 @@ world="
 babel-cli
 dart-sass
 eslint-cli
+license
 prettier
 tslint
 typescript
