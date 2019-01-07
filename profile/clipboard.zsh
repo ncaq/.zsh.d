@@ -1,9 +1,13 @@
 copy-cutbuffer-to-clipboard() {
-    echo -n $CUTBUFFER|xsel --clipboard --input --logfile /dev/null
+    if hash xsel 2>/dev/null; then
+        echo -n $CUTBUFFER|xsel --clipboard --input --logfile /dev/null
+    fi
 }
 
 copy-clipboard-to-cutbuffer() {
-    CUTBUFFER=$(echo ''|xsel --clipboard --output --logfile /dev/null)
+    if hash xsel 2>/dev/null; then
+        CUTBUFFER=$(echo ''|xsel --clipboard --output --logfile /dev/null)
+    fi
 }
 
 kill-region-clipboard() {
