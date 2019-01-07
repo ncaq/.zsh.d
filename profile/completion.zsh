@@ -1,12 +1,17 @@
 mkdir -p /tmp/$USER-zsh-completions/
-rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
+if hash rustup 2>/dev/null; then
+    rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
+fi
 
 fpath=(
     /tmp/$USER-zsh-completions/
-    $(rustc --print sysroot)/share/zsh/site-functions
     $ZDOTDIR/lib/zsh-completions/src
     $ZDOTDIR/lib/gentoo-zsh-completions/src
     $fpath)
+
+if hash rustc 2>/dev/null; then
+    fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
+fi
 
 LISTMAX=0 # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
 
