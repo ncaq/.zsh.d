@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-set -eux
-
 world="
 hlint
 intero
