@@ -39,3 +39,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 autoload -U compinit
 compinit -u -d /tmp/$USER.zcompdump
+
+# compdefが生成されている必要があるのでcompinitの後に設置する
+source $(where aws_zsh_completer.sh)
