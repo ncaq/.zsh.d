@@ -35,7 +35,7 @@ alias git-daily='git log --all --format="%h %ai %s" --since=$(date +"%Y-%m-%d-00
 alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull --all"'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias iconv-cp932='iconv --from-code CP932 --to-code UTF-8'
-alias mc='sudo emerge -C app-eselect/eselect-rust dev-lang/rust-bin virtual/cargo virtual/rust && sudo emerge -c'
+alias mc='sudo emerge -C app-eselect/eselect-rust dev-lang/rust-bin virtual/cargo virtual/rust; sudo emerge -c'
 alias metaflac-add-replay-gain-all='find . -type d -print0|parallel --no-notice --null --keep-order "metaflac --add-replay-gain {}/*.flac"'
 alias mkbackup='sudo mksquashfs /boot /etc /home /opt /root /usr/local /var $(date --iso-8601)_$(hostname).sfs -comp xz -noappend -e /home/ncaq/backup/'
 alias month-update='cd ~/Documents && unlink current && mkdir archive/$(date +"%Y-%m") && ln -s archive/$(date +"%Y-%m") current'
