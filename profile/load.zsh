@@ -13,6 +13,7 @@ autoload -U percol-subfind
 zle -N percol-subfind
 
 autoload -U pip-install-world
+autoload -U rustup-install-world
 autoload -U stack-install-world
 autoload -U yarn-install-world
 

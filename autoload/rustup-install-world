@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+world="
+clippy
+rls-preview
+rust-analysis
+rust-src
+rustfmt
+"
+
+echo $world|xargs rustup component add
