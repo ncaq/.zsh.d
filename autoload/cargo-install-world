@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+world="
+cargo-edit
+cargo-watch
+"
+
+echo $world|xargs cargo install

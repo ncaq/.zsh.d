@@ -12,6 +12,7 @@ zle -N percol-history
 autoload -U percol-subfind
 zle -N percol-subfind
 
+autoload -U cargo-install-world
 autoload -U pip-install-world
 autoload -U rustup-install-world
 autoload -U stack-install-world
