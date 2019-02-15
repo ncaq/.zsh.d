@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 world="
+@azu/github-label-setup
 babel-cli
 dart-sass
 eslint-cli
