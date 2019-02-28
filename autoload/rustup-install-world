@@ -2,7 +2,7 @@
 
 world="
 clippy
-rls-preview
+rls
 rust-analysis
 rust-src
 rustfmt
