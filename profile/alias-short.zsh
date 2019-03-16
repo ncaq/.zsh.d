@@ -13,6 +13,9 @@ alias x='gtk-launch'
 alias y='yarn start'
 alias z='exec zsh'
 
+alias bf='sudo btrfs filesystem'
+alias bs='sudo btrfs subvolume'
+
 alias eqa='equery --no-pipe a'
 alias eqb='equery --no-pipe b'
 alias eqc='equery --no-pipe c'
