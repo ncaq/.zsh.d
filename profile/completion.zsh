@@ -41,4 +41,6 @@ autoload -U compinit
 compinit -u -d /tmp/$USER.zcompdump
 
 # compdefが生成されている必要があるのでcompinitの後に設置する
-source $(where aws_zsh_completer.sh)
+if hash aws 2>/dev/null; then
+    source $(where aws_zsh_completer.sh)
+fi
