@@ -55,6 +55,7 @@ alias je='sudo journalctl -e'
 
 alias off='systemctl poweroff'
 alias reb='systemctl reboot'
+alias sus='systemctl suspend'
 
 alias sdd='sudo systemctl disable'
 alias sde='sudo systemctl enable'
