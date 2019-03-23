@@ -32,7 +32,7 @@ alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 *
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|less'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1 | grep cc1'
-alias genkernel-update='sudo genkernel --keymap --btrfs --luks --busybox --firmware initramfs'
+alias genkernel-update='sudo genkernel --no-lvm --btrfs --luks --firmware initramfs'
 alias git-daily='git log --all --format="%h %ai %s" --since=$(date +"%Y-%m-%d-00:00:00") --author=$(git config user.email)|xsel --clipboard --input --logfile /dev/null'
 alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull --progress --all --keep"'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
