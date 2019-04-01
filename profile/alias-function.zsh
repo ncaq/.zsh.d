@@ -38,7 +38,7 @@ alias git-pull-all='locate --regex "$(pwd)/.*/.git$" --null|parallel --no-notice
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias iconv-cp932='iconv --from-code CP932 --to-code UTF-8'
 alias metaflac-add-replay-gain-all='find . -type d -print0|parallel --no-notice --null --keep-order "metaflac --add-replay-gain {}/*.flac"'
-alias mkbackup='sudo mksquashfs /etc /home /root /usr/local /var $(date --iso-8601)_$(hostname).sfs -comp zstd -noappend'
+alias mkbackup='sudo mksquashfs /etc /home /root /usr/local /var $(date --iso-8601)_$(hostname).sfs -comp zstd -noappend -wildcards -e "... *.sfs" "... .cache" "... .stack" "... .stack-work" "... Cache" "... _cache" "... cache" "... dist" "... node_modules" "... target"'
 alias month-update='cd ~/Documents && unlink current && mkdir archive/$(date +"%Y-%m") && ln -s archive/$(date +"%Y-%m") current'
 alias mozc-config='/usr/libexec/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/libexec/mozc/mozc_tool --mode=dictionary_tool'
