@@ -1,6 +1,4 @@
-if [[ -z "$ZDOTDIR" ]]; then
-    source ~/.profile
-fi
+source ~/.profile
 
 fpath=($ZDOTDIR/autoload/ $fpath)
 
