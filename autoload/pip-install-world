@@ -5,6 +5,7 @@ awscli
 jsx-lexer
 online-judge-tools
 percol
+pygments-github-lexers
 "
 
 echo $world|xargs pip install --user
