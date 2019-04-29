@@ -5,6 +5,7 @@ world="
 babel-cli
 dart-sass
 eslint-cli
+javascript-typescript-langserver
 license
 prettier
 typescript
