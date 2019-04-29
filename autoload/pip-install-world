@@ -6,6 +6,7 @@ jsx-lexer
 online-judge-tools
 percol
 pygments-github-lexers
+python-language-server
 "
 
 echo $world|xargs pip install --user
