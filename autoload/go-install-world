@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+world="
+github.com/sourcegraph/go-langserver
+"
+
+echo $world|xargs go get -u
