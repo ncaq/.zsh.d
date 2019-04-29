@@ -8,6 +8,7 @@ dart-sass
 eslint-cli
 javascript-typescript-langserver
 license
+ocaml-language-server
 prettier
 typescript
 yarn
