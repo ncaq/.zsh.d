@@ -7,7 +7,6 @@ dart-sass
 eslint-cli
 license
 prettier
-tslint
 typescript
 yarn
 "
