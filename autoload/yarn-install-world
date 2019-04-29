@@ -3,6 +3,7 @@
 world="
 @azu/github-label-setup
 babel-cli
+bash-language-server
 dart-sass
 eslint-cli
 javascript-typescript-langserver
