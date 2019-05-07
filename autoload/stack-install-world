@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 world="
+hlint
 pandoc
 profiteur
 stylish-haskell
