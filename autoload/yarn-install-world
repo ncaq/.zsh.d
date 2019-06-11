@@ -13,4 +13,4 @@ sass
 typescript
 "
 
-echo $world|xargs yarn global add
+echo $world|xargs yarn --emoji true global add
