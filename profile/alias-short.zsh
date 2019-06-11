@@ -68,7 +68,7 @@ alias sds='sudo systemctl status'
 alias sdt='sudo systemctl list-timers'
 alias sdu='systemctl --user'
 
-alias y='yarn --emoji true'
+alias y='yarn'
 alias ya='y add'
 alias yb='y build'
 alias yc='y clean'
