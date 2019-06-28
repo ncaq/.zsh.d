@@ -34,7 +34,7 @@ alias f='locate --ignore-case'
 alias ff='locate-current-dir'
 
 alias ga='git add --all .'
-alias gc='git clean -dxi'
+alias gc='git clean -d --interactive -x'
 alias gd='git clone --verbose --recursive --jobs $(nproc) --depth=1 --shallow-submodules'
 alias ge='git clone --verbose --recursive --jobs $(nproc)'
 alias gf='git-add-file'
