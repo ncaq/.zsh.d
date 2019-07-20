@@ -2,7 +2,9 @@
 
 world="
 cargo-edit
+cargo-tree
 cargo-watch
+evcxr_repl
 "
 
 echo $world|xargs cargo install
