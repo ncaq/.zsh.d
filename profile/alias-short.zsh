@@ -41,7 +41,7 @@ alias gf='git-add-file'
 alias gl='git log'
 alias gm='git commit -v -m'
 alias gp='git push --verbose'
-alias gq='git pull-request'
+alias gq='git pull-request && hub pr show'
 alias gs='git status'
 alias gu='git pull --progress --all --keep'
 
