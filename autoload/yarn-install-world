@@ -11,6 +11,7 @@ ocaml-language-server
 prettier
 sass
 typescript
+vscode-css-languageserver-bin
 "
 
 echo $world|xargs yarn global add
