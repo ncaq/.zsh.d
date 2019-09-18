@@ -5,7 +5,6 @@ world="
 @elm-tooling/elm-language-server
 asar
 babel-cli
-bash-language-server
 bs-platform
 create-react-app
 elm
