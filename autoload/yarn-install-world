@@ -7,6 +7,7 @@ asar
 babel-cli
 bs-platform
 create-react-app
+dockerfile-language-server-nodejs
 elm
 elm-format
 elm-test
