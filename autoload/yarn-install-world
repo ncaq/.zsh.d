@@ -24,6 +24,7 @@ reason-cli@latest-linux
 sass
 spago
 typescript
+typescript-language-server
 vscode-css-languageserver-bin
 "
 
