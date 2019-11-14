@@ -28,6 +28,10 @@ oj-dmd() {
     dmd -debug -g $@ -of=a.out && oj test
 }
 
+docker-hub-tags() {
+    curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
+}
+
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|less'
 alias fullpath='find -L `pwd` -maxdepth 1'
