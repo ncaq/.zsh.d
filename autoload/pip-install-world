@@ -2,6 +2,7 @@
 
 world="
 awscli
+awslogs
 jsx-lexer
 online-judge-tools
 percol
