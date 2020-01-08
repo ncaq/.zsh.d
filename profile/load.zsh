@@ -22,3 +22,6 @@ autoload -U yarn-install-world
 source $ZDOTDIR/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f '/etc/profile.d/autojump.sh' ] && source /etc/profile.d/autojump.sh
+
+export SDKMAN_DIR="/home/ncaq/.sdkman"
+[[ -s "/home/ncaq/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ncaq/.sdkman/bin/sdkman-init.sh"
