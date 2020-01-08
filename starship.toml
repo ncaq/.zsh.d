@@ -1,0 +1,16 @@
+[aws]
+displayed_items = "profile"
+
+[character]
+use_symbol_for_status = true
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+
+[git_branch]
+symbol = "🌱 "
+
+[time]
+disabled = false
+format = "%Y-%m-%dT%H:%M:%S"
