@@ -1,3 +1,6 @@
+caexport SDKMAN_DIR=~/.sdkman
+[[ -s ~/.sdkman/bin/sdkman-init.sh ]] && source ~/.sdkman/bin/sdkman-init.sh
+
 export EDITOR='emacsclient -a emacs'
 export GOPATH=~/.go
 export LESS='--ignore-case --long-prompt --RAW-CONTROL-CHARS'
