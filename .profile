@@ -1,4 +1,4 @@
-caexport SDKMAN_DIR=~/.sdkman
+export SDKMAN_DIR=~/.sdkman
 [[ -s ~/.sdkman/bin/sdkman-init.sh ]] && source ~/.sdkman/bin/sdkman-init.sh
 
 export EDITOR='emacsclient -a emacs'
