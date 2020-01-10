@@ -22,3 +22,4 @@ autoload -U yarn-install-world
 source $ZDOTDIR/lib/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f '/etc/profile.d/autojump.sh' ] && source /etc/profile.d/autojump.sh
+[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
