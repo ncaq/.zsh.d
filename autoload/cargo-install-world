@@ -9,4 +9,4 @@ evcxr_repl
 starship
 "
 
-echo $world|xargs cargo install --force
+echo $world|xargs cargo install
