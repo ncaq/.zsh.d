@@ -20,7 +20,7 @@ prg() {
 
 git-add-file() {
     git add --all .
-    readonly local files=$(git diff --cached --name-only .|parallel basename|perl6 -e 'lines.join(", ").say')
+    readonly local files=$(git diff --cached --name-only .|parallel basename|raku -e 'lines.join(", ").say')
     git commit -m "added: ${files}"
 }
 
