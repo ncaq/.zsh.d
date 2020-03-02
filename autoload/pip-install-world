@@ -9,6 +9,7 @@ online-judge-tools
 percol
 pygments-github-lexers
 python-language-server
+yamllint
 "
 
 echo $world|xargs pip install --user
