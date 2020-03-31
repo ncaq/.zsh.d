@@ -1,4 +1,4 @@
-[[ $ZDOTDIR ]] || source .profile
+[[ $ZDOTDIR ]] || source ~/.profile
 
 fpath=($ZDOTDIR/autoload/ $fpath)
 
