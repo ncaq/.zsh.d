@@ -8,6 +8,7 @@ chpwd() {
 }
 
 if hash starship 2>/dev/null; then
+    export STARSHIP_CONFIG=$ZDOTDIR/starship.toml
     eval "$(starship init zsh)"
     return
 fi
