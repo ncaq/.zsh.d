@@ -12,7 +12,6 @@ elm
 elm-format
 elm-test
 eslint-cli
-javascript-typescript-langserver
 license
 node-gyp
 ocaml-language-server
