@@ -13,6 +13,7 @@ alias x='gtk-launch'
 alias z='exec zsh'
 
 alias bf='sudo btrfs filesystem'
+alias bl='sudo btrfs subvolume list --sort=path'
 alias bs='sudo btrfs subvolume'
 
 alias eqa='equery --no-pipe a'
