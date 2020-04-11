@@ -45,6 +45,7 @@ alias gp='git push --verbose'
 alias gq='git pull-request && hub pr show'
 alias gs='git status'
 alias gu='git pull --progress --all --keep'
+alias gw='git switch'
 
 alias gr='git reset --hard'
 alias grh='git reset --hard HEAD'
