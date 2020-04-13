@@ -1,12 +1,12 @@
 mkdir -p /tmp/$USER-zsh-completions/
 if hash rustup 2>/dev/null; then
-    rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
+  rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
 fi
 
 fpath=(/tmp/$USER-zsh-completions/ $fpath)
 
 if hash rustc 2>/dev/null; then
-    fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
+  fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
 fi
 
 LISTMAX=0 # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
@@ -40,5 +40,5 @@ compinit -u -d /tmp/$USER.zcompdump
 
 # compdefが生成されている必要があるのでcompinitの後に設置する
 if hash aws 2>/dev/null; then
-    source $(where aws_zsh_completer.sh)
+  source $(where aws_zsh_completer.sh)
 fi

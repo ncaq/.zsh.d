@@ -2,34 +2,34 @@ alias ls='ls --color=auto --classify --human-readable --group-directories-first 
 alias ll='ls --all -l'
 
 le() {
-    ll --color=always $@|less -N
+  ll --color=always $@|less -N
 }
 
 locate-current-dir() {
-    locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
+  locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
 rgp() {
-    rg --pretty $@|less -R
+  rg --pretty $@|less -R
 }
 
 prg() {
-    readonly local ps_result=$(ps aux)
-    echo -E $ps_result|rg $@
+  readonly local ps_result=$(ps aux)
+  echo -E $ps_result|rg $@
 }
 
 git-add-file() {
-    git add --all .
-    readonly local files=$(git diff --cached --name-only .|parallel basename|raku -e 'lines.join(", ").say')
-    git commit -m "added: ${files}"
+  git add --all .
+  readonly local files=$(git diff --cached --name-only .|parallel basename|raku -e 'lines.join(", ").say')
+  git commit -m "added: ${files}"
 }
 
 oj-dmd() {
-    dmd -debug -g $@ -of=a.out && oj test
+  dmd -debug -g $@ -of=a.out && oj test
 }
 
 docker-hub-tags() {
-    curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
+  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
 }
 
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
