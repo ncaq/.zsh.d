@@ -1,14 +1,3 @@
-mkdir -p /tmp/$USER-zsh-completions/
-if hash rustup 2>/dev/null; then
-  rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
-fi
-
-fpath=(/tmp/$USER-zsh-completions/ $fpath)
-
-if hash rustc 2>/dev/null; then
-  fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
-fi
-
 LISTMAX=0 # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
 
 setopt globdots                 # .から始まるファイルも展開する
@@ -35,10 +24,21 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # lsの補完色を表示色と同じにする
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+mkdir -p /tmp/$USER-zsh-completions/
+fpath=(/tmp/$USER-zsh-completions/ $fpath)
+
+if hash rustup 2>/dev/null; then
+  rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
+fi
+
+if hash rustc 2>/dev/null; then
+  fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
+fi
+
 autoload -U compinit
-compinit -u -d /tmp/$USER.zcompdump
+compinit -u -d /tmp/$USER-zsh-completions/$USER.zcompdump
 
 # compdefが生成されている必要があるのでcompinitの後に設置する
-if hash aws 2>/dev/null; then
+if hash aws_zsh_completer.sh 2>/dev/null; then
   source $(where aws_zsh_completer.sh)
 fi
