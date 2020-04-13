@@ -3,11 +3,7 @@ if hash rustup 2>/dev/null; then
     rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
 fi
 
-fpath=(
-    /tmp/$USER-zsh-completions/
-    $ZDOTDIR/lib/zsh-completions/src
-    $ZDOTDIR/lib/gentoo-zsh-completions/src
-    $fpath)
+fpath=(/tmp/$USER-zsh-completions/ $fpath)
 
 if hash rustc 2>/dev/null; then
     fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
@@ -36,6 +32,8 @@ zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:processes' command 'ps ax -o pid,s,args'
 # 大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# lsの補完色を表示色と同じにする
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 autoload -U compinit
 compinit -u -d /tmp/$USER.zcompdump
