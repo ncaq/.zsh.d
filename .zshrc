@@ -24,7 +24,6 @@ zinit light-mode for \
 
 zinit light gentoo/gentoo-zsh-completions
 zinit light zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
 zinit ice atload'eval `dircolors $PWD/dircolors.256dark`'
