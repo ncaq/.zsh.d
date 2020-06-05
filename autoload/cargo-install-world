@@ -3,7 +3,6 @@
 world="
 cargo-edit
 cargo-outdated
-cargo-tree
 cargo-watch
 evcxr_repl
 oxipng
