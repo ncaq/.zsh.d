@@ -32,6 +32,14 @@ docker-hub-tags() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
 }
 
+change-to-btrfs-subvolume() {
+  tmpdir=$(mktemp -d)
+  mv $1/ $tmpdir
+  btrfs subvolume create $1
+  mv $tmpdir/* $1/
+  rmdir $tmpdir
+}
+
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|less'
 alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-3) --force && grub-update'
