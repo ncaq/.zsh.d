@@ -32,7 +32,7 @@ docker-hub-tags() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
 }
 
-change-to-btrfs-subvolume() {
+btrfs-to-subvolume() {
   tmpdir=$(mktemp -d)
   mv $1/ $tmpdir
   btrfs subvolume create $1
