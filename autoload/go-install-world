@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 
 world="
-github.com/sourcegraph/go-langserver
+golang.org/x/tools/gopls@latest
 "
 
-echo $world|xargs go get -u
+export GO111MODULE=on
+
+echo $world|xargs go get
