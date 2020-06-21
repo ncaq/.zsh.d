@@ -69,6 +69,8 @@ alias sdr='sudo systemctl restart'
 alias sds='sudo systemctl status'
 alias sdt='sudo systemctl list-timers'
 alias sdu='systemctl --user'
+alias sdur='systemctl --user restart'
+alias sdus='systemctl --user status'
 
 alias y='yarn'
 alias ya='y add'
