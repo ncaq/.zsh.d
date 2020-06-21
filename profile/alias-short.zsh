@@ -34,6 +34,7 @@ alias eqy='equery --no-pipe y'
 alias f='locate --ignore-case'
 alias ff='locate-current-dir'
 
+alias g='git'
 alias ga='git add --all .'
 alias gc='git clean -d --interactive -x'
 alias gd='git clone --verbose --recursive --jobs $(nproc) --depth=1 --shallow-submodules'
