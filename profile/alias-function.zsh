@@ -10,7 +10,7 @@ locate-current-dir() {
 }
 
 rgp() {
-  rg --pretty $@|less -R
+  rg --pretty $@|bat
 }
 
 prg() {
