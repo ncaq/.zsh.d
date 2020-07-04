@@ -2,22 +2,22 @@ setopt auto_cd                  # cdの省略
 setopt autopushd                # ディレクトリを自動で記録
 setopt extended_glob            # 拡張glob
 
-autoload -U history-search-end
+# 履歴を遡る時既に入力してた文字列で部分マッチする
+autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
-autoload -U percol-history
-zle -N percol-history
+# ユーザディレクトリにある関数を全てautoloadする
+for i in $ZDOTDIR/autoload/*
+do
+  autoload -Uz $i
+done
 
-autoload -U percol-subfind
+# キーバインドとして使えるようにする
+zle -N percol-history
 zle -N percol-subfind
 
-autoload -U cargo-install-world
-autoload -U go-install-world
-autoload -U pip-install-world
-autoload -U rustup-install-world
-autoload -U stack-install-world
-autoload -U yarn-install-world
-
+# autojumpがインストールされていたらロード
 [ -f '/etc/profile.d/autojump.sh' ] && source /etc/profile.d/autojump.sh
+# sdkmanを毎回ロードして更新する
 [ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh

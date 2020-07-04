@@ -1,5 +1,5 @@
 export SDKMAN_DIR=~/.sdkman
-[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
+[[ $SDKMAN_DIR ]] || [ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
 
 export EDITOR='emacsclient -a emacs'
 export GOPATH=~/.go

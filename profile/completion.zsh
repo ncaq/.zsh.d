@@ -1,4 +1,4 @@
-LISTMAX=0 # 0にすると､ウィンドウを超えて出力されるときにのみ問い合わせる http://d.hatena.ne.jp/tsaka/20060923/1158993348
+LISTMAX=0                       # 0にするとウィンドウを超えて出力されるときにのみ問い合わせる
 
 setopt globdots                 # .から始まるファイルも展開する
 setopt list_packed              # 補完候補を詰めて表示する
@@ -6,8 +6,7 @@ setopt list_types               # 補完候補の表示をls -Fのようにす�
 setopt numeric_glob_sort        # 数字補完リストを数値としてソートする
 
 # 補完の情報を増やす
-# http://qiita.com/PSP_T/items/ed2d36698a5cc314557d
-# highlight
+# ハイライトを有効化
 zstyle ':completion:*:default' menu select=2
 # 補完を分類する
 zstyle ':completion:*' verbose yes
@@ -35,8 +34,7 @@ if hash rustc 2>/dev/null; then
   fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
 fi
 
-autoload -U compinit
-compinit -u -d /tmp/$USER-zsh-completions/$USER.zcompdump
+autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/$USER.zcompdump
 
 # compdefが生成されている必要があるのでcompinitの後に設置する
 if hash aws_zsh_completer.sh 2>/dev/null; then

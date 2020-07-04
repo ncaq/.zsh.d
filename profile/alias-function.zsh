@@ -18,26 +18,8 @@ prg() {
   echo -E $ps_result|rg $@
 }
 
-git-add-file() {
-  git add --all .
-  readonly local files=$(git diff --cached --name-only .|parallel basename|raku -e 'lines.join(", ").say')
-  git commit -m "added: ${files}"
-}
-
-oj-dmd() {
-  dmd -debug -g $@ -of=a.out && oj test
-}
-
 docker-hub-tags() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
-}
-
-btrfs-to-subvolume() {
-  tmpdir=$(mktemp -d)
-  mv $1/ $tmpdir
-  btrfs subvolume create $1
-  mv $tmpdir/* $1/
-  rmdir $tmpdir
 }
 
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'

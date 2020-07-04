@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+set -eu
+
+tmpdir=$(mktemp -d)
+mv $1/ $tmpdir
+btrfs subvolume create $1
+mv $tmpdir/* $1/
+rmdir $tmpdir
