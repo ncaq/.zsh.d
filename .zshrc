@@ -1,4 +1,4 @@
-[[ $ZDOTDIR ]] || source ~/.profile
+[[ $ZDOTDIR ]] && source $ZDOTDIR/.profile
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zsh.d/.zinit/bin/zinit.zsh ]]; then

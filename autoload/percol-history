@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-set -eu
-
 BUFFER=$(history -r -n 1|uniq-deep|percol --prompt-bottom --result-bottom-up)
 CURSOR=$#BUFFER
 zle clear-screen

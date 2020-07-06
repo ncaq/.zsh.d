@@ -19,5 +19,3 @@ zle -N percol-subfind
 
 # autojumpがインストールされていたらロード
 [ -f '/etc/profile.d/autojump.sh' ] && source /etc/profile.d/autojump.sh
-# sdkmanを毎回ロードして更新する
-[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
