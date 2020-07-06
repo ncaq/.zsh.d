@@ -1,5 +1,3 @@
-[[ $ZDOTDIR ]] && source $ZDOTDIR/.profile
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zsh.d/.zinit/bin/zinit.zsh ]]; then
   print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
@@ -29,6 +27,10 @@ zinit light zsh-users/zsh-completions
 zinit ice atload'eval `dircolors $PWD/dircolors.256dark`'
 zinit light seebi/dircolors-solarized
 
+typeset -U path PATH
+source $ZDOTDIR/.profile
+
+typeset -U fpath FPATH
 fpath=($ZDOTDIR/autoload/ $fpath)
 
 for i in $ZDOTDIR/profile/*

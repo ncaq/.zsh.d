@@ -8,4 +8,4 @@ export LESSHISTFILE='-'
 export VISUAL=$EDITOR
 export ZDOTDIR=~/.zsh.d
 
-export PATH="~/.local/bin:~/.cargo/bin:$GOPATH/bin:~/.yarn/bin:$ZDOTDIR/bin:/sbin:/usr/sbin:/usr/games/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.yarn/bin:$ZDOTDIR/bin:$PATH"
