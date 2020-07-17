@@ -49,5 +49,5 @@ alias opusenc-speech-parallel='parallel "opusenc --speech --framesize 60 {} {.}.
 alias oxipng-best-parallel='parallel "oxipng --opt 6 --strip safe --interlace 0 --zopfli"'
 alias oxipng-best='oxipng --opt 6 --strip safe --interlace 0 --zopfli'
 alias rgs='rg --encoding shift_jis'
-alias sqlite-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
+alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
 alias to-clipboard='xsel --clipboard --output --logfile /dev/null'
