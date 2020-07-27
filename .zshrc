@@ -28,7 +28,7 @@ zinit ice atload'eval `dircolors $PWD/dircolors.256dark`'
 zinit light seebi/dircolors-solarized
 
 typeset -U path PATH
-source $ZDOTDIR/.profile
+source ~/.profile
 
 typeset -U fpath FPATH
 fpath=($ZDOTDIR/autoload/ $fpath)
