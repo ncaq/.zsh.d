@@ -13,4 +13,4 @@ python-language-server
 yamllint
 "
 
-echo $world|xargs pip install --user
+echo $world|xargs pip install --user --upgrade
