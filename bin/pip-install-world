@@ -2,13 +2,10 @@
 set -eu
 
 world="
-awscli
 awslogs
-glances
 jsx-lexer
 online-judge-tools
 percol
-pygments-github-lexers
 yamllint
 "
 
