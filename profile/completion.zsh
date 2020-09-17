@@ -37,7 +37,12 @@ fi
 autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/$USER.zcompdump
 
 # compdefが生成されている必要があるのでcompinitの後に設置する
+
 if hash aws_completer 2>/dev/null; then
   autoload bashcompinit && bashcompinit
   complete -C aws_completer aws
+fi
+
+if hash pipenv 2>/dev/null; then
+  eval "$(pipenv --completion)"
 fi
