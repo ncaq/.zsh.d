@@ -13,6 +13,7 @@ elm
 elm-format
 elm-test
 eslint-cli
+eslint_d
 license
 node-gyp
 ocaml-language-server
