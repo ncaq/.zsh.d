@@ -13,4 +13,5 @@ symbol = "🌱 "
 
 [time]
 disabled = false
-format = "%Y-%m-%dT%H:%M:%S"
+format = "[$time]($style) "
+time_format = "%Y-%m-%dT%H:%M:%S"
