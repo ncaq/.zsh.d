@@ -5,4 +5,10 @@ export LESSHISTFILE='-'
 export VISUAL=$EDITOR
 export ZDOTDIR=~/.zsh.d
 
-export PATH="$HOME/.local/bin:$HOME/.local/share/coursier/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.yarn/bin:$ZDOTDIR/bin:$PATH"
+if hash cygpath 2>/dev/null; then
+  YARN_GLOBAL_BIN=$(cygpath $(yarn global bin))
+else
+  YARN_GLOBAL_BIN=$(yarn global bin)
+fi
+
+export PATH="$HOME/.local/bin:$HOME/.local/share/coursier/bin:$HOME/.cargo/bin:$GOPATH/bin:$YARN_GLOBAL_BIN:$ZDOTDIR/bin:$PATH"
