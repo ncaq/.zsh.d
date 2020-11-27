@@ -24,7 +24,7 @@ docker-hub-tags() {
 
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|less'
-alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-3) --force && grub-update'
+alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-) --force && grub-update'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1|grep cc1'
 alias genkernel-update='sudo genkernel --no-lvm --btrfs --luks --firmware initramfs && grub-update'
