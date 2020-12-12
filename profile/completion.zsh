@@ -23,6 +23,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # lsの補完色を表示色と同じにする
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+# 常にBash形式の補完ファイルを受け付ける
+autoload bashcompinit && bashcompinit
+
 mkdir -p /tmp/$USER-zsh-completions/
 fpath=(/tmp/$USER-zsh-completions/ $fpath)
 
@@ -36,9 +39,7 @@ fi
 
 autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/$USER.zcompdump
 
-# compdefが生成されている必要があるのでcompinitの後に設置する
-
+# AWS CLIの補完生成にはcompdefが生成されている必要があるのでcompinitの後に設置する
 if hash aws_completer 2>/dev/null; then
-  autoload bashcompinit && bashcompinit
   complete -C aws_completer aws
 fi
