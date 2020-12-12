@@ -20,12 +20,14 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit light gentoo/gentoo-zsh-completions
 zinit light zdharma/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 
 zinit ice atload'eval `dircolors $PWD/dircolors.256dark`'
 zinit light seebi/dircolors-solarized
+
+zinit ice atload'fpath+=$PWD/src'
+zinit light gentoo/gentoo-zsh-completions
 
 typeset -U path PATH
 source ~/.profile
