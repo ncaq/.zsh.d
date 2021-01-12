@@ -1,21 +1,14 @@
-alias ls='ls --color=auto --classify --human-readable --group-directories-first --sort=version --almost-all'
-alias ll='ls --all -l'
-
-le() {
-  ll --color=always $@|less -N
-}
-
 locate-current-dir() {
   locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
 }
 
-rgp() {
-  rg --pretty $@|bat
-}
-
-prg() {
+ps-rg() {
   readonly local ps_result=$(ps aux)
   echo -E $ps_result|rg $@
+}
+
+rg-pager() {
+  rg --pretty $@|less
 }
 
 docker-hub-tags() {
@@ -39,16 +32,8 @@ alias mkbackup='sudo mksquashfs /etc /home /root /usr/local /var $(date --iso-86
 alias month-update='cd ~/Documents && unlink current && mkdir archive/$(date +"%Y-%m") && ln -s archive/$(date +"%Y-%m") current'
 alias mozc-config='/usr/libexec/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/libexec/mozc/mozc_tool --mode=dictionary_tool'
-alias mrebuild='sudo emerge --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
-alias mudn='sudo emerge -uDN world'
-alias mudnb='sudo emerge -uDN --backtrack=30 world'
-alias mudnbw='sudo emerge -uDN --backtrack=30 --with-bdeps=y world'
-alias nkfu='nkf -w -x -Lu'
-alias nkfw='nkf -w -x -Lu --overwrite'
 alias opusenc-speech-parallel='parallel "opusenc --speech --framesize 60 {} {.}.opus"'
 alias oxipng-best-parallel='parallel "oxipng --opt max --strip safe --interlace 0 --zopfli"'
 alias oxipng-best='oxipng --opt max --strip safe --interlace 0 --zopfli'
-alias rgs='rg --encoding shift_jis'
-alias rsp='rsync --verbose --perms --times --group --owner -D --compress --human-readable --progress'
 alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
 alias to-clipboard='xsel --clipboard --output --logfile /dev/null'
