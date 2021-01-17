@@ -19,6 +19,7 @@ node-gyp
 ocaml-language-server
 prettier
 purescript
+pyright
 react-codemod
 sass
 spago
