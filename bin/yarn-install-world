@@ -18,10 +18,8 @@ license
 node-gyp
 ocaml-language-server
 prettier
-pulp
 purescript
 react-codemod
-reason-cli@latest-linux
 sass
 spago
 typescript
