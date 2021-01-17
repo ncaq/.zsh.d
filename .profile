@@ -6,7 +6,7 @@ export VISUAL=$EDITOR
 export ZDOTDIR=~/.zsh.d
 
 if hash gem 2>/dev/null; then
-  gempath=$(gem env gempath)
+  gempath=$(gem env gempath|tr ':' '\n'|grep "\.gem")/bin
 else
   gempath=""
 fi
@@ -21,4 +21,4 @@ else
   yarn_global_bin=""
 fi
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/share/coursier/bin:$ZDOTDIR/bin:$gempath$yarn_global_bin:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/share/coursier/bin:$ZDOTDIR/bin:$gempath:$yarn_global_bin:$PATH"
