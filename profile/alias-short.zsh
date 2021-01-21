@@ -1,4 +1,5 @@
 alias a='aunpack'
+alias b='sudo btrfs'
 alias bf='sudo btrfs filesystem'
 alias bl='sudo btrfs subvolume list --sort=path'
 alias bs='sudo btrfs subvolume'
