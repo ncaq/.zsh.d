@@ -3,7 +3,6 @@ set -eu
 
 world="
 clippy
-rls
 rust-analysis
 rust-src
 rustfmt
