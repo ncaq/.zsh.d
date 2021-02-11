@@ -2,9 +2,14 @@
 set -eu
 
 world="
+cargo
 clippy
+rls
 rust-analysis
+rust-docs
 rust-src
+rust-std
+rustc
 rustfmt
 "
 
