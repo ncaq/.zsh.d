@@ -2,7 +2,6 @@
 set -eu
 
 world="
-brittany
 hlint
 pandoc
 profiteur
