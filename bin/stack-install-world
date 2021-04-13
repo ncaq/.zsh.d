@@ -3,6 +3,7 @@ set -eu
 
 world="
 hlint
+implicit-hie
 pandoc
 profiteur
 stylish-haskell
