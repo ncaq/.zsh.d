@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 set -eu
 
+export RUSTFLAGS="-Ctarget-cpu=native"
+
 world="
 cargo-edit
 cargo-outdated
