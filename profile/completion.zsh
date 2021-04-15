@@ -37,6 +37,10 @@ if hash rustc 2>/dev/null; then
   fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
 fi
 
+if hash poetry 2>/dev/null; then
+  poetry completions zsh > /tmp/$USER-zsh-completions/_poetry
+fi
+
 autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/.zcompdump
 
 # AWS CLIの補完生成にはcompdefが生成されている必要があるのでcompinitの後に設置する
