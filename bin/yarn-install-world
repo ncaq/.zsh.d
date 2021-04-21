@@ -3,25 +3,11 @@ set -eu
 
 world="
 @azu/github-label-setup
-@elm-tooling/elm-language-server
-asar
-babel-cli
-bs-platform
-create-react-app
-dockerfile-language-server-nodejs
-elm
-elm-format
-elm-test
 eslint-cli
 license
-node-gyp
-ocaml-language-server
 prettier
-purescript
 pyright
-react-codemod
 sass
-spago
 typescript
 vscode-css-languageserver-bin
 "
