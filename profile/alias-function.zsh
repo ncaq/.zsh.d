@@ -15,7 +15,7 @@ docker-hub-tags() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
 }
 
-alias awslogs-get-pretty='awslogs get --color always --no-group --no-stream --timestamp'
+alias awslogsp='awslogs get --color always --no-group --no-stream --timestamp'
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|less'
 alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-) --force && grub-update'
