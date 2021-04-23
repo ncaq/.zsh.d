@@ -5,6 +5,7 @@ world="
 @azu/github-label-setup
 eslint-cli
 license
+node-gyp
 prettier
 pyright
 sass
