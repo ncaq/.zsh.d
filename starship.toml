@@ -1,5 +1,5 @@
 [character]
-use_symbol_for_status = true
+error_symbol = "[✖](bold red)"
 
 [directory]
 truncation_length = 100
