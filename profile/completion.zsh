@@ -47,3 +47,8 @@ autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/.zcompdump
 if hash aws_completer 2>/dev/null; then
   complete -C aws_completer aws
 fi
+
+# Stackの補完生成にはcompinitとbashcompinitが必要なので後に設置する
+if hash stack 2>/dev/null; then
+  eval "$(stack --bash-completion-script stack)"
+fi
