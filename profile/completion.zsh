@@ -23,32 +23,39 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # lsの補完色を表示色と同じにする
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# 常にBash形式の補完ファイルを受け付ける
-autoload bashcompinit && bashcompinit
-
 mkdir -p /tmp/$USER-zsh-completions/
 fpath=(/tmp/$USER-zsh-completions/ $fpath)
-
-if hash rustup 2>/dev/null; then
-  rustup completions zsh > /tmp/$USER-zsh-completions/_rustup
-fi
 
 if hash rustc 2>/dev/null; then
   fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
 fi
 
-if hash poetry 2>/dev/null; then
-  poetry completions zsh > /tmp/$USER-zsh-completions/_poetry
-fi
+# poetryなど補完生成にかなりの時間がかかるものが存在するため、
+# ファイルが存在しない時のみ補完ファイル生成を行います。
+# これにより時間がかかる初期化はブートから一回目の起動のみになります。
+() {
+  local stack_comp_file=/tmp/$USER-zsh-completions/_poetry
+  if hash stack 2>/dev/null && [ ! -f $stack_comp_file ]; then
+    stack --zsh-completion-script stack > $stack_comp_file
+  fi
 
+  local rustup_comp_file=/tmp/$USER-zsh-completions/_rustup
+  if hash rustup 2>/dev/null && [ ! -f $rustup_comp_file ]; then
+    rustup completions zsh > $rustup_comp_file
+  fi
+
+  local poetry_comp_file=/tmp/$USER-zsh-completions/_poetry
+  if hash poetry 2>/dev/null && [ ! -f $poetry_comp_file ]; then
+    poetry completions zsh > $poetry_comp_file
+  fi
+}
+
+# zcompdumpファイルを生成します。
 autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/.zcompdump
+# 常にBash形式の補完ファイルを受け付けます。
+autoload bashcompinit && bashcompinit
 
-# AWS CLIの補完生成にはcompdefが生成されている必要があるのでcompinitの後に設置する
+# AWS CLIの補完生成にはcompdefが生成されている必要があるので、compinitの後に設置します。
 if hash aws_completer 2>/dev/null; then
   complete -C aws_completer aws
-fi
-
-# Stackの補完生成にはcompinitとbashcompinitが必要なので後に設置する
-if hash stack 2>/dev/null; then
-  eval "$(stack --bash-completion-script stack)"
 fi
