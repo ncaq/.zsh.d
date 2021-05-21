@@ -11,8 +11,8 @@ else
   gempath=""
 fi
 
-if [[ -e ~/.opam/opam-init/init.zsh ]]; then
-  ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
+if [[ -f ~/.opam/opam-init/init.sh ]]; then
+  source ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null
 fi
 
 if hash yarn 2>/dev/null; then
