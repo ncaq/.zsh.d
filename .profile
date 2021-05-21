@@ -11,6 +11,10 @@ else
   gempath=""
 fi
 
+if [[ -e ~/.opam/opam-init/init.zsh ]]; then
+  ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null
+fi
+
 if hash yarn 2>/dev/null; then
   if hash cygpath 2>/dev/null; then
     yarn_global_bin=$(cygpath $(yarn --offline global bin))
