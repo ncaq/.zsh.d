@@ -6,7 +6,7 @@ export VISUAL=$EDITOR
 export ZDOTDIR=~/.zsh.d
 
 if hash gem 2>/dev/null; then
-  gempath=$(gem env gempath|tr ':' '\n'|grep "\.gem")/bin
+  gempath=$(gem env gempath|tr ':' '\n'|grep ".local/share/gem/ruby/")/bin
 else
   gempath=""
 fi
