@@ -62,6 +62,8 @@ fi
 
 # saml2awsの補完もcompinit前提なので、compinitの後に設定します。
 if hash saml2aws 2>/dev/null; then
-  # zshではなくbashを選んでいるのは、zshの補完ファイルが独自にcompinitを行うため、ファイルが生成されてしまうためです。
+  # 補完ファイル形式にzshではなくbashを選んでいるのは、
+  # zsh形式がbashのものにcompinitとbashcompinitを行っているだけで、
+  # compinitは自前で行いたいためです。
   eval "$(saml2aws --completion-script-bash)"
 fi
