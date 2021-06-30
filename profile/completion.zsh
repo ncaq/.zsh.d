@@ -59,3 +59,9 @@ autoload bashcompinit && bashcompinit
 if hash aws_completer 2>/dev/null; then
   complete -C aws_completer aws
 fi
+
+# saml2awsの補完もcompinit前提なので、compinitの後に設定します。
+if hash saml2aws 2>/dev/null; then
+  # zshではなくbashを選んでいるのは、zshの補完ファイルが独自にcompinitを行うため、ファイルが生成されてしまうためです。
+  eval "$(saml2aws --completion-script-bash)"
+fi
