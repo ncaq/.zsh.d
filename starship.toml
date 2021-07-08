@@ -5,9 +5,6 @@ error_symbol = "[✖](bold red)"
 truncation_length = 100
 truncate_to_repo = false
 
-[git_branch]
-symbol = "🌱 "
-
 [time]
 disabled = false
 format = "[$time]($style) "
