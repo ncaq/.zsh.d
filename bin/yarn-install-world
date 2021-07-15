@@ -3,6 +3,7 @@ set -eu
 
 world="
 @azu/github-label-setup
+bash-language-server
 eslint-cli
 license
 node-gyp
