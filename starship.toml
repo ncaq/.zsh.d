@@ -1,9 +1,10 @@
-[character]
-error_symbol = "[✖](bold red)"
-
 [directory]
 truncation_length = 100
 truncate_to_repo = false
+
+[status]
+disabled = false
+format = '[\[$symbol $common_meaning $signal_name $int\]]($style) '
 
 [time]
 disabled = false
