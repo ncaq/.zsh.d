@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 set -eu
 
 dmd -debug -g $@ -of=a.out
