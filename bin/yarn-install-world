@@ -3,7 +3,12 @@ set -eu
 
 world="
 @azu/github-label-setup
+@elm-tooling/elm-language-server
 bash-language-server
+elm
+elm-format
+elm-review
+elm-test
 eslint-cli
 license
 node-gyp
