@@ -8,6 +8,7 @@ cargo-edit
 cargo-outdated
 cargo-watch
 evcxr_repl
+license-generator
 oxipng
 starship
 "
