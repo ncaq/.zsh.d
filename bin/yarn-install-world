@@ -10,7 +10,6 @@ elm-format
 elm-review
 elm-test
 eslint-cli
-license
 node-gyp
 prettier
 pyright
