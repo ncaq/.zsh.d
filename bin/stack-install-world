@@ -2,10 +2,7 @@
 set -eu
 
 world="
-hlint
-hspec-discover
 implicit-hie
-pandoc
 profiteur
 stylish-haskell
 uniq-deep
