@@ -1,3 +1,4 @@
+alias bat='batcat'
 alias cp='cp --reflink=auto -p --verbose'
 alias eix-diff='eix-diff -F'
 alias eix-sync='sudo eix-sync -aM'
