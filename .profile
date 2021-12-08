@@ -11,6 +11,10 @@ else
   gem_path=""
 fi
 
+if [[ -f ~/.ghcup/env ]]; then
+  source ~/.ghcup/env
+fi
+
 if [[ -f ~/.opam/opam-init/init.sh ]]; then
   source ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null
 fi
