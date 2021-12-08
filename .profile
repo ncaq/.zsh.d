@@ -22,7 +22,7 @@ fi
 if hash yarn 2>/dev/null; then
   yarn_global_bin=$(yarn --offline global bin)
 else
-  # yarnがシステムに認識されてない場合、雑にbinの箇所を推定します。
+  # when yarn is not found, use standard yarn path.
   yarn_global_bin="$HOME/.yarn/bin"
 fi
 
