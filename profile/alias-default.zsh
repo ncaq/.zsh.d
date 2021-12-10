@@ -4,7 +4,6 @@ alias eix-diff='eix-diff -F'
 alias eix-sync='sudo eix-sync -aM'
 alias eix='eix -F'
 alias make="make -j$(nproc)"
-alias memory-compact='sudo memory-compact'
 alias mv='mv --interactive --verbose'
 alias parallel='parallel --no-notice'
 alias sudo='sudo '
