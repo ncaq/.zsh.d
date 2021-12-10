@@ -1,4 +1,7 @@
 alias a='aunpack'
+alias apti='sudo apt install'
+alias aptp='sudo apt purge'
+alias apts='sudo apt search'
 alias b='sudo btrfs'
 alias bf='sudo btrfs filesystem'
 alias bl='sudo btrfs subvolume list --sort=path'
