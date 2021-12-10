@@ -1,0 +1,11 @@
+#!/bin/zsh
+set -eu
+
+if hash wsl-open 2>/dev/null; then
+  exec wsl-open "$@"
+elif hash xdg-open 2>/dev/null; then
+  exec xdg-open "$@"
+fi
+
+echo "open like command is not found" >&2
+exit 1
