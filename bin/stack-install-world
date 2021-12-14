@@ -2,6 +2,7 @@
 set -eu
 
 world="
+fourmolu
 implicit-hie
 profiteur
 stylish-haskell
