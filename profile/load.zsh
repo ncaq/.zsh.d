@@ -18,7 +18,12 @@ zle -N percol-history
 zle -N percol-subfind
 
 # autojumpがインストールされていたらロード
-[ -f '/etc/profile.d/autojump.sh' ] && source /etc/profile.d/autojump.sh
+if [ -f '/etc/profile.d/autojump.sh' ]; then
+  source /etc/profile.d/autojump.sh
+elif [ -f '/usr/share/autojump/autojump.sh' ]; then
+  source /usr/share/autojump/autojump.sh
+fi
+
 # direnvがインストールされていたらロード
 if hash direnv 2>/dev/null; then
   eval "$(direnv hook zsh)"
