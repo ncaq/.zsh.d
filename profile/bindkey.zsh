@@ -1,6 +1,7 @@
 stty stop undef
 
-bindkey -s '\el' '^ull\n'
+bindkey -s '\el' '^ull\n'       # M-l to ll
+bindkey -s '^,' ''              # C-, to Nothing
 
 bindkey '^[[Z' reverse-menu-complete # Shift-Tabで補完候補を逆順する('\e[Z'でも動作する)
 bindkey '^[b' backward-kill-word
