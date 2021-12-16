@@ -1,4 +1,5 @@
 alias a='aunpack'
+alias apta='sudo apt autoremove'
 alias apti='sudo apt install'
 alias aptp='sudo apt purge'
 alias apts='sudo apt search'
