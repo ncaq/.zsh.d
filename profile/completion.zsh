@@ -51,7 +51,7 @@ fi
 }
 
 # zcompdumpファイルを生成します。
-autoload -Uz compinit && compinit -u -d /tmp/$USER-zsh-completions/.zcompdump
+autoload -Uz compinit && compinit -u
 # 常にBash形式の補完ファイルを受け付けます。
 autoload bashcompinit && bashcompinit
 
