@@ -29,10 +29,8 @@ zinit light seebi/dircolors-solarized
 zinit ice atload'fpath+=$PWD/src'
 zinit light gentoo/gentoo-zsh-completions
 
-ZDOTDIR=$HOME/.zsh.d
-
 typeset -U path PATH
-source $ZDOTDIR/.profile
+source ~/.profile
 
 typeset -U fpath FPATH
 fpath=($ZDOTDIR/autoload/ $fpath)
