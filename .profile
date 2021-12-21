@@ -33,7 +33,7 @@ fi
 
 export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.local/share/coursier/bin:$HOME/.zsh.d/bin:$gem_path:$yarn_path:$PATH"
 
-# 非WSL環境ではGWSLのコマンドを実行しないようにします。
+# Do not run GWSL commands in a non-WSL environment.
 if ! grep -q "WSL" "/proc/sys/kernel/osrelease"; then
   return
 fi
