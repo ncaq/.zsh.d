@@ -56,7 +56,7 @@ autoload -Uz compinit && compinit -u
 autoload bashcompinit && bashcompinit
 
 # AWS CLIの補完生成にはcompdefが生成されている必要があるので、compinitの後に設置します。
-if hash ~/.local/bin/aws_zsh_completer.sh aws_zsh_completer.sh 2>/dev/null; then
+if hash ~/.local/bin/aws_zsh_completer.sh 2>/dev/null; then
   source ~/.local/bin/aws_zsh_completer.sh
 fi
 
