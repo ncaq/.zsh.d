@@ -3,7 +3,6 @@ export GOPATH=~/.go
 export LESS='--ignore-case --long-prompt --RAW-CONTROL-CHARS'
 export LESSHISTFILE='-'
 export VISUAL=$EDITOR
-export ZDOTDIR=$HOME/.zsh.d
 
 if hash gem 2>/dev/null; then
   gem_path=$(gem env gempath|tr ':' '\n'|grep ".local/share/gem/ruby/")/bin

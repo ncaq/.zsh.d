@@ -33,9 +33,9 @@ typeset -U path PATH
 source ~/.profile
 
 typeset -U fpath FPATH
-fpath=($ZDOTDIR/autoload/ $fpath)
+fpath=(~/.zsh.d/autoload/ $fpath)
 
-for i in $ZDOTDIR/profile/*
+for i in ~/.zsh.d/profile/*
 do
   source $i
 done

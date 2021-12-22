@@ -8,7 +8,7 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 
 # ユーザディレクトリにある関数を全てautoloadする
-for i in $ZDOTDIR/autoload/*
+for i in ~/.zsh.d/autoload/*
 do
   autoload -Uz $i
 done
