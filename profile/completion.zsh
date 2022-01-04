@@ -59,11 +59,3 @@ autoload bashcompinit && bashcompinit
 if hash ~/.local/bin/aws_zsh_completer.sh 2>/dev/null; then
   source ~/.local/bin/aws_zsh_completer.sh
 fi
-
-# saml2awsの補完もcompinit前提なので、compinitの後に設定します。
-if hash saml2aws 2>/dev/null; then
-  # 補完ファイル形式にzshではなくbashを選んでいるのは、
-  # zsh形式がbashのものにcompinitとbashcompinitを行っているだけで、
-  # compinitは自前で行いたいためです。
-  eval "$(saml2aws --completion-script-bash)"
-fi
