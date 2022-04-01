@@ -1,0 +1,17 @@
+#!/bin/zsh
+set -eux
+
+# 新しく生成するarchive以下のディレクトリ名。
+year_month=$(date +"%Y-%m")
+
+# Documentsに移動。
+cd ~/Documents
+# 新しい月のディレクトリ生成。
+mkdir archive/$year_month
+# 古いシンボリックリンクを削除して、新しい月の方にシンボリックリンクを繋げる。
+unlink current
+ln -s archive/$year_month current
+# Gitに追記。
+git add --verbose current
+git commit --verbose --message='updated: month'
+git push --verbose
