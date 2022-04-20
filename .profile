@@ -31,7 +31,7 @@ else
   yarn_path=$yarn_global_bin
 fi
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.pyenv/shims:$HOME/.local/share/coursier/bin:$HOME/.zsh.d/bin:$gem_path:$yarn_path:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.pyenv/shims:$HOME/.pyenv/bin:$HOME/.local/share/coursier/bin:$HOME/.zsh.d/bin:$gem_path:$yarn_path:$PATH"
 
 # Do not run GWSL commands in a non-WSL environment.
 if [ ! -e "/proc/sys/kernel/osrelease" ] || ! grep -q "WSL" "/proc/sys/kernel/osrelease"; then
