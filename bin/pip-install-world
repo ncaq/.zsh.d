@@ -3,7 +3,6 @@ set -eu
 
 world="
 awslogs
-jsx-lexer
 online-judge-tools
 percol
 yamllint
