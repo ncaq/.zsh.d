@@ -4,14 +4,13 @@ export LESS='--ignore-case --long-prompt --RAW-CONTROL-CHARS'
 export LESSHISTFILE='-'
 export VISUAL=$EDITOR
 
+export PATH="$HOME/.rbenv/bin:$PATH"
 if hash rbenv 2>/dev/null; then
   eval "$(rbenv init -)"
 fi
 
 if hash ruby 2>/dev/null; then
-  gem_path=$(ruby -e 'print Gem.user_dir')/bin
-else
-  gem_path=""
+  export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 fi
 
 if [[ -f ~/.ghcup/env ]]; then
@@ -23,19 +22,20 @@ if [[ -f ~/.opam/opam-init/init.sh ]]; then
 fi
 
 if hash yarn 2>/dev/null; then
+  # For example, in the case of Windows (like MSYS2), it may be in AppData, so it is necessary to inquire.
   yarn_global_bin=$(yarn --offline global bin)
 else
-  # when yarn is not found, use standard yarn path.
+  # when yarn is not found, use linux standard yarn path.
   yarn_global_bin="$HOME/.yarn/bin"
 fi
 
 if hash cygpath 2>/dev/null; then
-  yarn_path=$(cygpath $yarn_global_bin)
+  export PATH="$(cygpath $yarn_global_bin):$PATH"
 else
-  yarn_path=$yarn_global_bin
+  export PATH="$yarn_global_bin:$PATH"
 fi
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.pyenv/shims:$HOME/.pyenv/bin:$HOME/.local/share/coursier/bin:$HOME/.zsh.d/bin:$gem_path:$yarn_path:$PATH"
+export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.pyenv/shims:$HOME/.pyenv/bin:$HOME/.local/share/coursier/bin:$HOME/.zsh.d/bin:$PATH"
 
 # Do not run GWSL commands in a non-WSL environment.
 if [ ! -e "/proc/sys/kernel/osrelease" ] || ! grep -q "WSL" "/proc/sys/kernel/osrelease"; then
