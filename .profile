@@ -4,6 +4,10 @@ export LESS='--ignore-case --long-prompt --RAW-CONTROL-CHARS'
 export LESSHISTFILE='-'
 export VISUAL=$EDITOR
 
+if hash rbenv 2>/dev/null; then
+  eval "$(rbenv init -)"
+fi
+
 if hash ruby 2>/dev/null; then
   gem_path=$(ruby -e 'print Gem.user_dir')/bin
 else
