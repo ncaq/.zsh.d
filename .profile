@@ -6,7 +6,7 @@ export VISUAL=$EDITOR
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 if hash rbenv 2>/dev/null; then
-  eval "$(rbenv init -)"
+  eval "$(rbenv init - zsh)"
 fi
 
 if hash ruby 2>/dev/null; then
