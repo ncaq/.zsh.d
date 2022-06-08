@@ -4,6 +4,10 @@ export LESS='--ignore-case --long-prompt --RAW-CONTROL-CHARS'
 export LESSHISTFILE='-'
 export VISUAL=$EDITOR
 
+if [[ -f ~/.poetry/env ]]; then
+  source ~/.poetry/env
+fi
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 if hash rbenv 2>/dev/null; then
   eval "$(rbenv init - zsh)"
