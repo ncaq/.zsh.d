@@ -3,4 +3,4 @@ set -eu
 
 git add --all .
 files=$(git diff --cached --name-only .|parallel --no-notice basename|raku -e 'lines.join(", ").say')
-git commit -m "added: ${files}"
+git commit -m "feat: add: ${files}"
