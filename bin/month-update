@@ -13,5 +13,5 @@ unlink current
 ln -s archive/$year_month current
 # Gitに追記。
 git add --verbose current
-git commit --verbose --message='updated: month'
+git commit --verbose --message='feat(month): update'
 git push --verbose
