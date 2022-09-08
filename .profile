@@ -6,19 +6,11 @@ export VISUAL=$EDITOR
 
 if [[ -x /opt/homebrew/bin/brew ]]; then
   eval $(/opt/homebrew/bin/brew shellenv)
+  export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin/:$PATH"
 fi
 
-if [[ -f ~/.poetry/env ]]; then
-  source ~/.poetry/env
-fi
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-if hash rbenv 2>/dev/null; then
-  eval "$(rbenv init - zsh)"
-fi
-
-if hash ruby 2>/dev/null; then
-  export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+if [[ -d $GOPATH ]]; then
+  export PATH="$GOPATH/bin:$PATH"
 fi
 
 if [[ -f ~/.ghcup/env ]]; then
@@ -27,6 +19,31 @@ fi
 
 if [[ -f ~/.opam/opam-init/init.sh ]]; then
   source ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null
+fi
+
+if [[ -d ~/.pyenv/ ]]; then
+  export PATH="$HOME/.pyenv/shims:$HOME/.pyenv/bin:$PATH"
+fi
+
+if [[ -f ~/.poetry/env ]]; then
+  source ~/.poetry/env
+fi
+
+if [[ -x ~/.rbenv/bin/rbenv ]]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init - zsh)"
+fi
+
+if hash ruby 2>/dev/null; then
+  export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+fi
+
+if [[ -f ~/.cargo/env ]]; then
+  source ~/.cargo/env
+fi
+
+if [[ -d ~/.local/share/coursier/bin ]]; then
+  export PATH="$HOME/.local/share/coursier/bin:$PATH"
 fi
 
 if hash yarn 2>/dev/null; then
@@ -43,7 +60,7 @@ else
   export PATH="$yarn_global_bin:$PATH"
 fi
 
-export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.pyenv/shims:$HOME/.pyenv/bin:$HOME/.local/share/coursier/bin:$HOME/.zsh.d/bin:/opt/homebrew/opt/coreutils/libexec/gnubin/:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.zsh.d/bin:$PATH"
 
 # Do not run GWSL commands in a non-WSL environment.
 if [ ! -e "/proc/sys/kernel/osrelease" ] || ! grep -q "WSL" "/proc/sys/kernel/osrelease"; then
