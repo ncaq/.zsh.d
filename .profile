@@ -4,6 +4,10 @@ export LESS='--ignore-case --long-prompt --RAW-CONTROL-CHARS'
 export LESSHISTFILE='-'
 export VISUAL=$EDITOR
 
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
 if [[ -f ~/.poetry/env ]]; then
   source ~/.poetry/env
 fi
