@@ -9,8 +9,6 @@ cargo-outdated
 cargo-watch
 evcxr_repl
 license-generator
-oxipng
-starship
 "
 
 echo $world|xargs cargo install
