@@ -62,11 +62,15 @@ fi
 
 export PATH="$HOME/.local/bin:$HOME/.zsh.d/bin:$PATH"
 
-# Do not run GWSL commands in a non-WSL environment.
+# If the execution environment is not WSL, skip subsequent executions.
 if [ ! -e "/proc/sys/kernel/osrelease" ] || ! grep -q "WSL" "/proc/sys/kernel/osrelease"; then
   return
 fi
 
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0 #GWSL
-export PULSE_SERVER=tcp:$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}') #GWSL
-export LIBGL_ALWAYS_INDIRECT=1 #GWSL
+if hash xrdb 2>/dev/null && [[ -f ~/.Xresources ]]; then
+  xrdb -merge ~/.Xresources
+fi
+
+if hash setxkbmap 2>/dev/null; then
+  setxkbmap us dvorak
+fi
