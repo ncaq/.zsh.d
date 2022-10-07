@@ -1,8 +1,8 @@
 #!/bin/zsh
 set -eu
 
-if hash wsl-open 2>/dev/null; then
-  exec wsl-open "$@"
+if hash wslview 2>/dev/null; then
+  exec wslview "$@"
 elif hash open 2>/dev/null; then
   exec open "$@"
 elif hash xdg-open 2>/dev/null; then
