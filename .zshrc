@@ -1,5 +1,6 @@
 typeset -U path PATH
 source ~/.profile
+export PATH="$HOME/.zsh.d/bin:$PATH"
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
