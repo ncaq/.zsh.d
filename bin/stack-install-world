@@ -3,11 +3,8 @@ set -eu
 
 world="
 fourmolu
-implicit-hie
 profiteur
-stylish-haskell
 uniq-deep
-yesod-bin
 "
 
 echo $world|xargs stack install
