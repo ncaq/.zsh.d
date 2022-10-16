@@ -3,6 +3,7 @@ set -eu
 
 world="
 fourmolu
+hlint
 profiteur
 uniq-deep
 "
