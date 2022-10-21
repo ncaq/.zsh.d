@@ -8,4 +8,7 @@ sass
 typescript
 "
 
+# yarn berry以降にはglobalは存在せず、
+# 毎回インストールチェックが入るdlxをprettierを手軽に使うことも難しいため、
+# 半分ブートローダとしてグローバルはv1のまま残しておくのが良さそう。
 echo $world|xargs yarn global add
