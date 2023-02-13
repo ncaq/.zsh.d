@@ -4,8 +4,6 @@ set -eu
 world="
 @azu/github-label-setup
 prettier
-sass
-typescript
 "
 
 # yarn berry以降にはglobalは存在しません。
