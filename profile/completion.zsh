@@ -34,6 +34,11 @@ fi
 # ファイルが存在しない時のみ補完ファイル生成を行います。
 # これにより時間がかかる初期化はブートから一回目の起動のみになります。
 () {
+  local gh_comp_file=/tmp/$USER-zsh-completions/_gh
+  if hash gh 2>/dev/null && [ ! -f $gh_comp_file ]; then
+    gh completion -s zsh > $gh_comp_file
+  fi
+
   local stack_comp_file=/tmp/$USER-zsh-completions/_stack
   if hash stack 2>/dev/null && [ ! -f $stack_comp_file ]; then
     stack --zsh-completion-script stack > $stack_comp_file
