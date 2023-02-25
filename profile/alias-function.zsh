@@ -37,4 +37,4 @@ alias oxipng-best-parallel='parallel "oxipng --opt max --strip safe --interlace 
 alias oxipng-best='oxipng --opt max --strip safe --interlace 0 --zopfli'
 alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
 alias to-clipboard='xsel --clipboard --output --logfile /dev/null'
-alias treep='tree|l'
+alias treep='tree|less'
