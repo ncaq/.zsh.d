@@ -25,6 +25,7 @@ alias genkernel-update='sudo genkernel --no-lvm --btrfs --luks initramfs && grub
 alias git-daily='git log --all --format="%h %ai %s" --since=$(date +"%Y-%m-%d-00:00:00") --author=$(git config user.email)|xsel --clipboard --input --logfile /dev/null'
 alias git-locate-pull='locate --regex "$(pwd)/.*/\.git$" --null|parallel --null --keep-order "test -d {} -a -d {}/.. && cd {}/.. && echo {}: && git -c color.diff=always pull --progress --all --keep"'
 alias git-submodule-pull='git submodule foreach "git checkout master && git pull"'
+alias github-issue-markdown='gh issue view --comments --json body --jq ".body" --json comments --jq ".body, .comments.[].body"'
 alias github-label-setup-dotfiles='github-label-setup --labels ~/dotfiles/github/github-label-presets.json'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias iconv-cp932='iconv --from-code CP932 --to-code UTF-8'
