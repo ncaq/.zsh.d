@@ -7,10 +7,6 @@ ps-rg() {
   echo -E $ps_result|rg $@
 }
 
-docker-hub-tags() {
-  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|batcat
-}
-
 github-issue-markdown() {
   gh issue view $@ --comments --json body --jq ".body" --json comments --jq ".body, .comments.[].body"|tr -d "\r"
 }
