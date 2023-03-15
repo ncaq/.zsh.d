@@ -7,10 +7,6 @@ ps-rg() {
   echo -E $ps_result|rg $@
 }
 
-rg-pager() {
-  rg --pretty $@|less
-}
-
 docker-hub-tags() {
   curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
 }
