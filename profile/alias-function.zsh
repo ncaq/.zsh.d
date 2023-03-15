@@ -8,7 +8,7 @@ ps-rg() {
 }
 
 docker-hub-tags() {
-  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|less
+  curl -s https://registry.hub.docker.com/v1/repositories/$1/tags|json_pp|rg name|batcat
 }
 
 github-issue-markdown() {
@@ -17,7 +17,7 @@ github-issue-markdown() {
 
 alias awslogsp='awslogs get --color always --no-group --no-stream --timestamp'
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
-alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|less'
+alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|batcat'
 alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-) --force && grub-update'
 alias fullpath='find -L `pwd` -maxdepth 1'
 alias gcc-march-native='gcc -march=native -E -v - </dev/null 2>&1|grep cc1'
@@ -38,4 +38,4 @@ alias oxipng-best='oxipng --opt max --strip safe --interlace 0 --zopfli'
 alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
 alias to-clipboard='xsel --clipboard --output --logfile /dev/null'
 alias trash-clear='trash-empty 30'
-alias treep='tree|less'
+alias treep='tree|batcat'
