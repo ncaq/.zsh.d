@@ -23,8 +23,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # lsの補完色を表示色と同じにする
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-mkdir -p /tmp/$USER-zsh-completions/
-fpath=(/tmp/$USER-zsh-completions/ $fpath)
+mkdir -p /tmp/zsh-completions-$USER/
+fpath=(/tmp/zsh-completions-$USER/ $fpath)
 
 if hash rustc 2>/dev/null; then
   fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
@@ -34,22 +34,22 @@ fi
 # ファイルが存在しない時のみ補完ファイル生成を行います。
 # これにより時間がかかる初期化はブートから一回目の起動のみになります。
 () {
-  local gh_comp_file=/tmp/$USER-zsh-completions/_gh
+  local gh_comp_file=/tmp/zsh-completions-$USER/_gh
   if hash gh 2>/dev/null && [ ! -f $gh_comp_file ]; then
     gh completion -s zsh > $gh_comp_file
   fi
 
-  local stack_comp_file=/tmp/$USER-zsh-completions/_stack
+  local stack_comp_file=/tmp/zsh-completions-$USER/_stack
   if hash stack 2>/dev/null && [ ! -f $stack_comp_file ]; then
     stack --zsh-completion-script stack > $stack_comp_file
   fi
 
-  local rustup_comp_file=/tmp/$USER-zsh-completions/_rustup
+  local rustup_comp_file=/tmp/zsh-completions-$USER/_rustup
   if hash rustup 2>/dev/null && [ ! -f $rustup_comp_file ]; then
     rustup completions zsh > $rustup_comp_file
   fi
 
-  local poetry_comp_file=/tmp/$USER-zsh-completions/_poetry
+  local poetry_comp_file=/tmp/zsh-completions-$USER/_poetry
   if hash poetry 2>/dev/null && [ ! -f $poetry_comp_file ]; then
     poetry completions zsh > $poetry_comp_file
   fi
