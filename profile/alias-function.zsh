@@ -11,7 +11,10 @@ github-issue-markdown() {
   gh issue view $@ --comments --json body --jq ".body" --json comments --jq ".body, .comments.[].body"|tr -d "\r"
 }
 
-alias awslogsp='awslogs get --color always --no-group --no-stream --timestamp'
+awslogsp() {
+  awslogs get --color always --no-group --no-stream --timestamp $@|bat
+}
+
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|bat'
 alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-) --force && grub-update'
