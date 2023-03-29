@@ -1,10 +1,10 @@
 #!/bin/zsh
 set -eu
 
-world="
+world='
 @azu/github-label-setup
 prettier
-"
+'
 
 # yarn berry以降にはglobalは存在しません。
 # 毎回インストールチェックが入るdlxでprettierを手軽に使うことも難しい。

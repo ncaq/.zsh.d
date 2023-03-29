@@ -8,7 +8,7 @@ ps-rg() {
 }
 
 github-issue-markdown() {
-  gh issue view $@ --comments --json body --jq ".body" --json comments --jq ".body, .comments.[].body"|tr -d "\r"
+  gh issue view $@ --comments --json body --jq '.body' --json comments --jq '.body, .comments.[].body'|tr -d '\r'
 }
 
 awslogsp() {

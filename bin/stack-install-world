@@ -1,11 +1,11 @@
 #!/bin/zsh
 set -eu
 
-world="
+world='
 fourmolu
 hlint
 profiteur
 uniq-deep
-"
+'
 
 echo $world|xargs stack install

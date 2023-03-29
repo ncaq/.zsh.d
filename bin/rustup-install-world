@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -eu
 
-world="
+world='
 cargo
 clippy
 rust-docs
@@ -9,6 +9,6 @@ rust-src
 rust-std
 rustc
 rustfmt
-"
+'
 
 echo $world|xargs rustup component add

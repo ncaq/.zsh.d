@@ -1,14 +1,14 @@
 #!/bin/zsh
 set -eu
 
-export RUSTFLAGS="-Ctarget-cpu=native"
+export RUSTFLAGS='-Ctarget-cpu=native'
 
-world="
+world='
 cargo-edit
 cargo-outdated
 cargo-watch
 evcxr_repl
 license-generator
-"
+'
 
 echo $world|xargs cargo install

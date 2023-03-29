@@ -1,11 +1,11 @@
 #!/bin/zsh
 set -eu
 
-world="
+world='
 awslogs
 online-judge-tools
 percol
 yamllint
-"
+'
 
 echo $world|xargs pip install --user --upgrade

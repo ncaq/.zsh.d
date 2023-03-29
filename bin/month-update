@@ -2,7 +2,7 @@
 set -eux
 
 # 新しく生成するarchive以下のディレクトリ名。
-year_month=$(date +"%Y-%m")
+year_month=$(date +'%Y-%m')
 
 # Documentsに移動。
 cd ~/Documents
