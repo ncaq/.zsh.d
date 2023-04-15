@@ -1,8 +1,0 @@
-#!/bin/zsh
-set -eu
-
-world='
-online-judge-tools
-'
-
-echo $world|xargs pip install --user --upgrade
