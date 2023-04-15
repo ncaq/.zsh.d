@@ -2,7 +2,6 @@
 set -eu
 
 world='
-awslogs
 online-judge-tools
 '
 
