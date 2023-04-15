@@ -4,7 +4,6 @@ set -eu
 world='
 awslogs
 online-judge-tools
-percol
 '
 
 echo $world|xargs pip install --user --upgrade
