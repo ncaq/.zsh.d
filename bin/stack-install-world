@@ -5,6 +5,7 @@ world='
 ShellCheck
 fourmolu
 hlint
+homura-stopwatch
 pandoc
 uniq-deep
 '
