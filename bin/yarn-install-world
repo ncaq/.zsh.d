@@ -2,7 +2,6 @@
 set -eu
 
 world='
-@azu/github-label-setup
 prettier
 '
 
