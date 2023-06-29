@@ -6,7 +6,6 @@ ShellCheck
 fourmolu
 hlint
 pandoc
-profiteur
 uniq-deep
 '
 
