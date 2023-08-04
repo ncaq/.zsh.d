@@ -1,0 +1,13 @@
+#!/bin/zsh
+set -eu
+
+# `gh repo set-default`で`upstream`の設定をインタラクティブに行うのが面倒なのでスクリプトで行えるようにします。
+
+# `upstream`のURLを取得します。
+upstream_url=$(git remote get-url upstream)
+
+# `https://github.com/`の部分を削除して、`owner/repo`形式の文字列を得ます。
+upstream_repo=$(echo $upstream_url|sed -e 's/https:\/\/github.com\///' -e 's/\.git$//')
+
+# 得られた`owner/repo`を引数として`gh repo set-default`コマンドを実行します。
+gh repo set-default $upstream_repo
