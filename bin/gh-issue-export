@@ -1,4 +1,10 @@
 #!/bin/zsh
 set -eu
 
-gh issue view $@ --comments --json body --jq '.body' --json comments --jq '.body, .comments.[].body|., "\n---\n"'|tr -d '\r'
+gh issue view $@ --json author --json createdAt --json body --json comments \
+   --jq '{
+top_level: ("@" + .author.login + " " + (.createdAt|fromdate|strflocaltime("%Y-%m-%dT%H:%M:%S %Z")) + "\n\n" + .body),
+comments: [.comments[] | "@" + .author.login + " " + (.createdAt|fromdate|strflocaltime("%Y-%m-%dT%H:%M:%S %Z")) + "\n\n" + .body]
+} |
+.top_level + "\n\n---\n\n" + (.comments | join("\n\n---\n\n"))' | \
+  tr -d '\r'
