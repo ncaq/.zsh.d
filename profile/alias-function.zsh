@@ -1,16 +1,3 @@
-locate-current-dir() {
-  locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}
-}
-
-ps-rg() {
-  readonly local ps_result=$(ps aux)
-  echo -E $ps_result|rg $@
-}
-
-github-issue-markdown() {
-  gh issue view $@ --comments --json body --jq '.body' --json comments --jq '.body, .comments.[].body'|tr -d '\r'
-}
-
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|bat'
 alias docker-image-prune-month='docker image prune --all --filter until=744h'

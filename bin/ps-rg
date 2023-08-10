@@ -1,0 +1,5 @@
+#!/bin/zsh
+set -eu
+
+ps_result=$(ps aux)
+echo -E $ps_result|rg $@

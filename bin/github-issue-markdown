@@ -1,0 +1,4 @@
+#!/bin/zsh
+set -eu
+
+gh issue view $@ --comments --json body --jq '.body' --json comments --jq '.body, .comments.[].body'|tr -d '\r'
