@@ -4,10 +4,8 @@ set -eu
 export RUSTFLAGS='-Ctarget-cpu=native'
 
 world='
-cargo-edit
 cargo-outdated
 cargo-watch
-evcxr_repl
 license-generator
 '
 
