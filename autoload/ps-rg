@@ -1,4 +1,4 @@
 #!/bin/zsh
 
-ps_result=$(ps aux)
+local ps_result=$(ps aux)
 echo -E $ps_result|rg $@
