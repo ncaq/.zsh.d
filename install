@@ -1,0 +1,7 @@
+#!/bin/zsh
+set -eu
+
+cd ~
+ln -sfv .zsh.d/.zshrc .
+
+source .zshrc
