@@ -1,4 +1,5 @@
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
+alias cwebp-lossy='parallel "cwebp -m 6 -mt -af -metadata all {} -o {.}.webp" :::'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|bat'
 alias docker-image-prune-month='docker image prune --all --filter until=744h'
 alias dracut-update='sudo dracut --kver $(eselect kernel show|rg linux|cut -d '-' -f 2-) --force && grub-update'
