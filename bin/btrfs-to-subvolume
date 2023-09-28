@@ -4,6 +4,6 @@ set -eu
 tmpdir=$(mktemp -d -p .)
 mv $1/ $tmpdir/
 btrfs subvolume create $1
-mv $tmpdir/$1/* $tmpdir/$1/.* $1/
+mv $tmpdir/$1/*(D) $1/
 rmdir $tmpdir/$1/
 rmdir $tmpdir
