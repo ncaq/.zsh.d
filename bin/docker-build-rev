@@ -1,0 +1,27 @@
+#!/bin/zsh
+set -eu
+
+# 雑な名前とバージョンでイメージを作成。
+
+# イメージの名前はプロジェクト名をトップとするディレクトリ名にする。
+git_top_level=$(git rev-parse --show-toplevel 2>/dev/null)
+if [ -z $git_top_level ]; then
+  # Gitの管理化ではない。
+  name=basename $(pwd)
+else
+  # Gitの管理化。
+  current_dir=$(pwd)
+  # Gitリポジトリ自身の名前も取得。
+  top_level_dir_name=$(basename $git_top_level)
+  name=$top_level_dir_name/${current_dir#$git_top_level/}
+fi
+
+# バージョンを以下の優先順位から決定。
+# Gitのタグ(に付随するハッシュ)
+# Gitのコミットハッシュ
+# 現在日時
+version=$(git describe --tags 2>/dev/null || git show --format=%h --no-patch 2>/dev/null || date +%Y-%m-%dT%H-%M-%S)
+
+# ビルドしてイメージを作成します。
+set -x
+docker build --tag $name:$version .
