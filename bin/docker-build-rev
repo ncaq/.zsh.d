@@ -21,7 +21,7 @@ fi
 # Gitのコミットハッシュ
 # 現在日時
 git_rev=$(git describe --tags 2>/dev/null || git show --format=%h --no-patch 2>/dev/null)
-if [ -z $git_version ]; then
+if [ -z $git_rev ]; then
   # Gitの管理化ではない。
   version=$(date +%Y-%m-%dT%H-%M-%S)
 else
