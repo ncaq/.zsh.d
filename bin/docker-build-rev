@@ -31,4 +31,4 @@ fi
 
 # ビルドしてイメージを作成します。
 set -x
-docker build --tag $name:$version . $@
+docker build --tag "$name":'latest' --tag "$name":"$version" . $@
