@@ -24,4 +24,4 @@ version=$(git describe --tags 2>/dev/null || git show --format=%h --no-patch 2>/
 
 # ビルドしてイメージを作成します。
 set -x
-docker build --tag $name:$version .
+docker build --tag $name:$version . $@
