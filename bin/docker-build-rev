@@ -10,10 +10,18 @@ if [ -z $git_top_level ]; then
   name=basename $(pwd)
 else
   # Gitの管理化。
-  current_dir=$(pwd)
-  # Gitリポジトリ自身の名前も取得。
+  # Gitリポジトリ自身の名前を取得。
   top_level_dir_name=$(basename $git_top_level)
-  name=$top_level_dir_name/${current_dir#$git_top_level/}
+  # サブディレクトリ名を取得。
+  current_dir=$(pwd)
+  sub_dir=${current_dir#$git_top_level/}
+  # トップレベルディレクトリ名とサブディレクトリ名を結合。
+  # トップレベルにいる場合は、トップレベルディレクトリ名のみにする。
+  if [ $current_dir = $sub_dir ]; then
+    name=$top_level_dir_name
+  else
+    name=$top_level_dir_name/$sub_dir
+  fi
 fi
 
 # バージョンをGitのブランチ名と以下の優先順位から決定。
