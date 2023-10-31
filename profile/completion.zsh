@@ -30,30 +30,25 @@ if hash rustc 2>/dev/null; then
   fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
 fi
 
-# poetryなど補完生成にかなりの時間がかかるものが存在するため、
-# ファイルが存在しない時のみ補完ファイル生成を行います。
-# これにより時間がかかる初期化はブートから一回目の起動のみになります。
-() {
-  local gh_comp_file=/tmp/zsh-completions-$USER/_gh
-  if hash gh 2>/dev/null && [ ! -f $gh_comp_file ]; then
-    gh completion -s zsh > $gh_comp_file
-  fi
+# 補完ファイルを生成する関数。
+# 補完生成に時間がかかるものがあるため、ファイルが存在しない場合のみ生成。
+# これにより、時間がかかる初期化はブートから一回目の起動のみ行う。
+generate-completion-file-by-command() {
+  local cmd=$1
+  local completion_cmd=$2
+  local output_dir=/tmp/zsh-completions-$USER
+  local completion_file=$output_dir/_$cmd
 
-  local stack_comp_file=/tmp/zsh-completions-$USER/_stack
-  if hash stack 2>/dev/null && [ ! -f $stack_comp_file ]; then
-    stack --zsh-completion-script stack > $stack_comp_file
-  fi
-
-  local rustup_comp_file=/tmp/zsh-completions-$USER/_rustup
-  if hash rustup 2>/dev/null && [ ! -f $rustup_comp_file ]; then
-    rustup completions zsh > $rustup_comp_file
-  fi
-
-  local poetry_comp_file=/tmp/zsh-completions-$USER/_poetry
-  if hash poetry 2>/dev/null && [ ! -f $poetry_comp_file ]; then
-    poetry completions zsh > $poetry_comp_file
+  # コマンドが存在して補完ファイルが存在しない場合のみ生成
+  if hash $cmd 2>/dev/null && [ ! -f $completion_file ]; then
+    eval $completion_cmd > $completion_file
   fi
 }
+
+generate-completion-file-by-command 'gh' 'gh completion -s zsh'
+generate-completion-file-by-command 'poetry' 'poetry completions zsh'
+generate-completion-file-by-command 'rustup' 'rustup completions zsh'
+generate-completion-file-by-command 'stack' 'stack --zsh-completion-script stack'
 
 # zcompdumpファイルを生成します。
 autoload -Uz compinit && compinit -u
