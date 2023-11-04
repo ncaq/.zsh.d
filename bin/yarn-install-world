@@ -8,7 +8,7 @@ prettier
 # corepackでnpmとyarnを管理する。
 corepack enable --install-directory ~/.local/bin npm yarn
 # グローバルでは勝手にマイグレーションを行わないようにyarn classicを利用する。
-corepack prepare yarn@1.22.19 --activate
+corepack prepare yarn@1 --activate
 
 # yarn berry以降にはglobalは存在しません。
 # 毎回インストールチェックが入るdlxでprettierを手軽に使うことも難しい。
