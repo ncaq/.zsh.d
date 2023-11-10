@@ -1,4 +1,6 @@
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
+alias corepack-activate-yarn-classic='corepack prepare yarn@1 --activate'
+alias corepack-activate-yarn-stable='corepack prepare yarn@stable --activate'
 alias cwebp-lossy='parallel "cwebp -m 6 -mt -af -metadata all {} -o {.}.webp" :::'
 alias disk-usage='sudo du --human-readable --one-file-system .|sort --human-numeric-sort --reverse|bat'
 alias docker-image-prune-month='docker image prune --all --filter until=744h'
