@@ -8,7 +8,6 @@ chpwd() {
 
 # starshipが使える場合それを使用する
 if hash starship 2>/dev/null; then
-  export STARSHIP_CONFIG=~/.zsh.d/starship.toml
   eval "$(starship init zsh)"
   # starshipの設定で終了する
   return
