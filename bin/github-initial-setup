@@ -1,0 +1,22 @@
+#!/bin/zsh
+set -eux
+
+# GitHubのリポジトリでたいてい行う初期設定を行う。
+
+# スクリプトの位置を取得。
+script_dir=$(dirname $0)
+# 典型的ラベルを設定。
+# トークンはこれだけ行える少ない権限を持つものを引数で指定する。
+yarn dlx @azu/github-label-setup --labels $script_dir/../share/github/label-presets.json --token "$1"
+# リリースノートに影響するラベルによる振り分けを設定。
+yarn dlx @azu/github-label-setup --addReleaseYml
+# リリースノート振り分けファイルのみをコミット。
+git reset
+git add .github/release.yml
+git commit -m "ci: add: .github/release.yml"
+# GitHub CLIで私のリポジトリでよく使う設定を行う。
+gh repo edit \
+   --delete-branch-on-merge \
+   --enable-auto-merge \
+   --enable-rebase-merge=false \
+   --enable-squash-merge=false
