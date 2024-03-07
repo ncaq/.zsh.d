@@ -4,7 +4,7 @@ set -eu
 # 雑な名前とバージョンでイメージを作成。
 
 # イメージの名前はプロジェクト名をトップとするディレクトリ名にする。
-git_top_level=$(git rev-parse --show-toplevel 2>/dev/null)
+git_top_level=$(git rev-parse --show-toplevel 2>/dev/null || echo '')
 if [ -z $git_top_level ]; then
   # Gitの管理化ではない。
   name=basename $(pwd)
@@ -28,7 +28,7 @@ fi
 # Gitのタグ(に付随するハッシュ)
 # Gitのコミットハッシュ
 # 現在日時
-git_rev=$(git describe --tags 2>/dev/null || git show --format=%h --no-patch 2>/dev/null)
+git_rev=$(git describe --tags 2>/dev/null || git show --format=%h --no-patch 2>/dev/null || echo '')
 if [ -z $git_rev ]; then
   # Gitの管理化ではない。
   version=$(date +%Y-%m-%dT%H-%M-%S)
