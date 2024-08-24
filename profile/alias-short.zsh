@@ -63,6 +63,7 @@ alias ls='ls --color=auto --classify --human-readable --group-directories-first 
 alias m='sudo -E emerge'
 alias mmodule='m @module-rebuild'
 alias mrebuild='m --backtrack=30 --with-bdeps=y @live-rebuild @module-rebuild @preserved-rebuild'
+alias mu='m -u @world'
 alias mudn='m -uDN @world'
 alias mudnb='mudn --backtrack=30'
 alias mudnbw='mudn --backtrack=30 --with-bdeps=y'
