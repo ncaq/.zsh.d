@@ -16,7 +16,9 @@ git add .github/release.yml
 git commit -m "ci: add: .github/release.yml"
 # GitHub CLIで私のリポジトリでよく使う設定を行う。
 gh repo edit \
+   --allow-update-branch \
    --delete-branch-on-merge \
    --enable-auto-merge \
+   --enable-merge-commit \
    --enable-rebase-merge=false \
    --enable-squash-merge=false
