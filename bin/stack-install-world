@@ -6,7 +6,7 @@ ShellCheck
 fourmolu
 hlint
 homura-stopwatch
-pandoc
+pandoc-cli
 uniq-deep
 '
 
