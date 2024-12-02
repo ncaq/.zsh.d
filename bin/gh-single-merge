@@ -1,0 +1,41 @@
+#!/bin/zsh
+set -eux
+
+# To make Pull Requests easily in personal development repositories, single commits are merged in a messy way.
+
+if [ -n "$(git status --porcelain)" ]; then
+  print -u2 -P "%F{red}The working directory has changes.%f"
+  exit 1
+fi
+
+# fetch remote status.
+git fetch --all
+
+# get default remote branch, e.g. `refs/remotes/origin/master`.
+default_remote_branch=$(git rev-parse --abbrev-ref origin/HEAD)
+default_branch=${default_remote_branch#origin/}
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# To make a Pull Request, it is necessary to create a branch.
+if [[ $default_branch == $current_branch ]]; then
+  print -u2 -P "%F{red}Current branch is default branch.%f"
+  exit 1
+fi
+
+# push to my remote branch.
+git push --verbose --set-upstream origin
+
+# check the number of differences.
+diff_count=$(git rev-list --count $default_remote_branch..HEAD)
+
+# The only time I am allowed to be messy with this script is when I do a single commit.
+if [ $diff_count -ne 1 ]; then
+  print -u2 -P "%F{red}Commit diff is not one. But it is $diff_count.%f"
+  exit 1
+fi
+
+# create pull request.
+gh pr create --assignee @me --fill
+
+# merge by auto.
+gh pr merge --auto --merge
