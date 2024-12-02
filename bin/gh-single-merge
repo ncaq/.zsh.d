@@ -39,3 +39,7 @@ gh pr create --assignee @me --fill
 
 # merge by auto.
 gh pr merge --auto --merge
+
+# After the merge, it automatically comes back to the default branch.
+git checkout $default_branch
+git pull --progress --all --keep
