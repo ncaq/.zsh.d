@@ -5,8 +5,8 @@ world='
 prettier
 '
 
-# corepackでnpmとyarnを管理する。
-corepack enable --install-directory ~/.local/bin npm yarn pnpm
+# corepackでyarnとpnpmを管理する。
+corepack enable --install-directory ~/.local/bin yarn pnpm
 # グローバルでは勝手にマイグレーションを行わないようにyarn classicを利用する。
 corepack prepare yarn@1 --activate
 
