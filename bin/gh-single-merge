@@ -11,7 +11,7 @@ fi
 # fetch remote status.
 git fetch --all
 
-# get default remote branch, e.g. `refs/remotes/origin/master`.
+# get default remote branch, e.g. `origin/master`.
 default_remote_branch=$(git rev-parse --abbrev-ref origin/HEAD)
 default_branch=${default_remote_branch#origin/}
 current_branch=$(git rev-parse --abbrev-ref HEAD)
