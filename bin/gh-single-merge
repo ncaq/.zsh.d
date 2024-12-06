@@ -34,8 +34,52 @@ if [ $diff_count -ne 1 ]; then
   exit 1
 fi
 
+# Determine the label to be assigned from the prefix of the commit message.
+# If it cannot be easily determined, an error is terminated because it should be determined by myself.
+# I use [commitlint/@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
+commit_message=$(git log -1 --pretty=%B)
+
+labels=()
+
+# Check for BREAKING CHANGE.
+if echo "$commit_message"|grep -q "^BREAKING CHANGE"; then
+  labels+=("Type: Breaking Change")
+fi
+
+# # Check for '!' after type/scope.
+# Inferences are made rather roughly.
+if echo "$commit_message"|head -n 1|grep -E -q "^.+!: "; then
+  labels+=("Type: Breaking Change")
+fi
+
+# Determine the primary label based on the commit type.
+case $commit_message in
+  "fix"*)
+    labels+=("Type: Bug")
+    ;;
+  "feat"*)
+    labels+=("Type: Feature")
+    ;;
+  "ci"*)
+    labels+=("Type: CI")
+    ;;
+  "docs"*)
+    labels+=("Type: Documentation")
+    ;;
+  "refactor"*)
+    labels+=("Type: Refactoring")
+    ;;
+  "test"*)
+    labels+=("Type: Testing")
+    ;;
+  *)
+    print -u2 -P "%F{red}The label could not be analogized from the commit message.%f\n$commit_message"
+    exit 1
+    ;;
+esac
+
 # create pull request.
-gh pr create --assignee @me --fill
+gh pr create --assignee @me --fill --label "${(j:,:)labels}"
 
 # merge by auto.
 gh pr merge --auto --merge
