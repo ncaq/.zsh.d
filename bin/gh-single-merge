@@ -46,7 +46,7 @@ if echo "$commit_message"|grep -q "^BREAKING CHANGE"; then
   labels+=("Type: Breaking Change")
 fi
 
-# # Check for '!' after type/scope.
+# Check for '!' after type/scope.
 # Inferences are made rather roughly.
 if echo "$commit_message"|head -n 1|grep -E -q "^.+!: "; then
   labels+=("Type: Breaking Change")
