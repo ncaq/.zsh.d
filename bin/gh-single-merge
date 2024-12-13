@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -eux
+set -eu
 
 # To make Pull Requests easily in personal development repositories, single commits are merged in a messy way.
 
