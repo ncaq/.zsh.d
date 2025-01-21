@@ -12,8 +12,7 @@ fi
 git fetch --all
 
 # get default remote branch, e.g. `origin/master`.
-default_remote_branch=$(git rev-parse --abbrev-ref origin/HEAD)
-default_branch=${default_remote_branch#origin/}
+default_branch=$(git remote show origin|grep 'HEAD branch'|awk '{print $NF}')
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 # To make a Pull Request, it is necessary to create a branch.
@@ -26,7 +25,7 @@ fi
 git push --verbose --set-upstream origin
 
 # check the number of differences.
-diff_count=$(git rev-list --count $default_remote_branch..HEAD)
+diff_count=$(git rev-list --count $default_branch..HEAD)
 
 # The only time I am allowed to be messy with this script is when I do a single commit.
 if [ $diff_count -ne 1 ]; then
