@@ -2,6 +2,11 @@ typeset -U path PATH
 source ~/.profile
 export PATH="$HOME/.zsh.d/bin:$PATH"
 
+if ! [ -t 0 ]; then
+  # 端末でない場合、パスを通しただけで終了する。
+  return
+fi
+
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
   source ~/.nix-profile/etc/profile.d/nix.sh
 elif [ -e /etc/profile.d/nix.sh ]; then
