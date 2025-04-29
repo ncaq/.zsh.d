@@ -4,6 +4,8 @@ export PATH="$HOME/.zsh.d/bin:$PATH"
 
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
   source ~/.nix-profile/etc/profile.d/nix.sh
+elif [ -e /etc/profile.d/nix.sh ]; then
+  source /etc/profile.d/nix.sh
 fi
 
 ### Added by Zinit's installer
