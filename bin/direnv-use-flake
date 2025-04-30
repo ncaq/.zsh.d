@@ -1,0 +1,14 @@
+#!/bin/zsh
+set -eu
+ENVRC=".envrc"
+LINE="use flake . --accept-flake-config"
+
+if [[ -e $ENVRC ]]; then
+  echo "Error: $ENVRC already exists. Aborting." >&2
+  exit 1
+fi
+
+echo "$LINE" > "$ENVRC"
+echo "Created $ENVRC with: $LINE"
+
+direnv allow
