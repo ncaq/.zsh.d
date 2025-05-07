@@ -7,12 +7,6 @@ if ! [ -t 0 ]; then
   return
 fi
 
-if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then
-  source ~/.nix-profile/etc/profile.d/nix.sh
-elif [ -e /etc/profile.d/nix.sh ]; then
-  source /etc/profile.d/nix.sh
-fi
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
   print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
