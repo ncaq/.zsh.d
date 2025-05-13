@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 set -eu
 
 gh issue view $@ --json body --jq '.body' --json comments --jq '.body, .comments.[].body|., "\n---\n"'|tr -d '\r'

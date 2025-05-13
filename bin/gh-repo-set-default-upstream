@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 set -eu
 
 # `gh repo set-default`で`upstream`の設定をインタラクティブに行うのが面倒なのでスクリプトで行えるようにします。
