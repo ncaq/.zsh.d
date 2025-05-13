@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 set -eu
 
 locate --ignore-case --regex "^$(pwd).*$1.*" ${@[2, -1]}

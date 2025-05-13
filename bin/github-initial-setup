@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 set -eux
 
 # GitHubのリポジトリでたいてい行う初期設定を行う。
