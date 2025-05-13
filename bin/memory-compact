@@ -1,15 +1,15 @@
-#!/usr/bin/sudo zsh
+#!/usr/bin/env zsh
 set -eu
 
 # WSLなどで際限なくメモリをキャッシュなどに確保して、
 # ホスト側メモリを食い尽くした時に、
 # 再起動無しでメモリを開放するためのコマンドです。
 
-sync
-echo 3 > /proc/sys/vm/drop_caches
-echo 1 > /proc/sys/vm/compact_memory
-
-# Local Variables:
-# mode: sh
-# sh-shell: zsh
-# End:
+if [ "$(id -u)" -ne 0 ]; then
+  # Where is not root, exec sudo
+  exec sudo "$0" "$@"
+else
+  sync
+  echo 3 > /proc/sys/vm/drop_caches
+  echo 1 > /proc/sys/vm/compact_memory
+fi
