@@ -19,5 +19,5 @@ alias opusenc-speech='parallel "opusenc --speech --framesize 60 {} {.}.opus" :::
 alias oxipng-best='parallel "oxipng --opt max --strip safe --interlace 0 --zopfli" :::'
 alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
 alias to-clipboard='xsel --logfile /dev/null --input --clipboard'
-alias trash-clear='trash-empty 30'
+alias trash-clear='trash empty --before 1month'
 alias treep='tree|bat'
