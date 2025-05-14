@@ -42,3 +42,10 @@ generate-completion-file-by-command() {
 }
 
 generate-completion-file-by-command 'poetry' 'poetry completions zsh'
+
+# trashyの補完がエラーになるので雑に回避。
+# TODO: 調査して問題を起こしているところにバグ報告をする。
+function _trash() {
+  _files
+}
+compdef _trash trash
