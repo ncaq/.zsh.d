@@ -35,9 +35,6 @@ zinit light zsh-users/zsh-completions
 zinit ice atload'eval `dircolors $PWD/dircolors.256dark`'
 zinit light seebi/dircolors-solarized
 
-zinit ice atload'fpath+=$PWD/src'
-zinit light gentoo/gentoo-zsh-completions
-
 typeset -U fpath FPATH
 fpath=(~/.zsh.d/autoload/ $fpath)
 

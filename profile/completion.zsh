@@ -26,10 +26,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 mkdir -p /tmp/zsh-completions-$USER/
 fpath=(/tmp/zsh-completions-$USER/ $fpath)
 
-if hash rustc 2>/dev/null; then
-  fpath=($(rustc --print sysroot)/share/zsh/site-functions $fpath)
-fi
-
 # 補完ファイルを生成する関数。
 # 補完生成に時間がかかるものがあるため、ファイルが存在しない場合のみ生成。
 # これにより、時間がかかる初期化はブートから一回目の起動のみ行う。
@@ -45,20 +41,4 @@ generate-completion-file-by-command() {
   fi
 }
 
-generate-completion-file-by-command 'gh' 'gh completion -s zsh'
 generate-completion-file-by-command 'poetry' 'poetry completions zsh'
-generate-completion-file-by-command 'rustup' 'rustup completions zsh'
-generate-completion-file-by-command 'stack' 'stack --zsh-completion-script stack'
-
-# zcompdumpファイルを生成します。
-autoload -Uz compinit && compinit -u
-# 常にBash形式の補完ファイルを受け付けます。
-autoload bashcompinit && bashcompinit
-
-# AWS CLIの補完生成にはcompdefが生成されている必要があるので、compinitの後に設置します。
-# 複数の方法を試します。
-if [ -f ~/.local/bin/aws_zsh_completer.sh ]; then
-  source ~/.local/bin/aws_zsh_completer.sh
-elif hash aws_completer 2>/dev/null; then
-  complete -C aws_completer aws
-fi
