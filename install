@@ -1,5 +1,0 @@
-#!/usr/bin/env zsh
-set -eu
-
-cd ~
-ln -sfv .zsh.d/.zshrc .
