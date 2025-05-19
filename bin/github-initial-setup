@@ -12,8 +12,6 @@ yarn dlx @azu/github-label-setup --labels $script_dir/../share/github/label-pres
 yarn dlx @azu/github-label-setup --addReleaseYml
 # リリースノート振り分けファイルのみをコミット。
 yarn dlx prettier --write .github/release.yml
-git add .github/release.yml
-git commit -m "ci: add: .github/release.yml"
 # GitHub CLIで私のリポジトリでよく使う設定を行う。
 gh repo edit \
    --allow-update-branch \
