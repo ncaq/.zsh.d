@@ -68,6 +68,9 @@ case $commit_message in
   "refactor"*)
     labels+=("Type: Refactoring")
     ;;
+  "style"*)
+    labels+=("Type: Refactoring")
+    ;;
   "test"*)
     labels+=("Type: Testing")
     ;;
