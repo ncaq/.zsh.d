@@ -6,11 +6,11 @@ set -eux
 # スクリプトの位置を取得。
 script_dir=$(dirname $0)
 # 典型的ラベルを設定。
-# トークンはこれだけ行える少ない権限を持つものを引数で指定する。
+# トークンはなるべく少ない権限のものを引数で指定する。
 yarn dlx @azu/github-label-setup --labels $script_dir/../share/github/label-presets.json --token "$1"
-# リリースノートに影響するラベルによる振り分けを設定。
+# リリースノートのラベル振り分け設定。
 yarn dlx @azu/github-label-setup --addReleaseYml
-# リリースノート振り分けファイルのみをコミット。
+# リリースノートのラベル振り分けファイルをフォーマット。
 yarn dlx prettier --write .github/release.yml
 # GitHub CLIで私のリポジトリでよく使う設定を行う。
 gh repo edit \
