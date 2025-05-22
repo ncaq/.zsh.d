@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
 set -eu
 ENVRC=".envrc"
-LINE="use flake . --accept-flake-config"
+CONTENT="#!/usr/bin/env bash
+dotenv_if_exists .env.local
+use flake . --accept-flake-config"
 
 if [[ -e $ENVRC ]]; then
   echo "Error: $ENVRC already exists. Aborting." >&2
   exit 1
 fi
 
-echo "$LINE" > "$ENVRC"
-echo "Created $ENVRC with: $LINE"
+echo "$CONTENT" > "$ENVRC"
+echo "Created $ENVRC with: $CONTENT"
 
 direnv allow
