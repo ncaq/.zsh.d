@@ -1,3 +1,4 @@
+alias cabal-gild-all='git ls-files -z "*.cabal"|parallel --verbose --null "cabal-gild --io {}"'
 alias chmod-read='sudo chown $USER: . **/* && chmod 755 . **/*(/) && chmod 644 **/*(.)'
 alias corepack-activate-yarn-classic='corepack prepare yarn@1 --activate'
 alias corepack-activate-yarn-stable='corepack prepare yarn@stable --activate'
