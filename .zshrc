@@ -32,9 +32,6 @@ zinit light-mode for \
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 
-zinit ice atload'eval `dircolors $PWD/dircolors.256dark`'
-zinit light seebi/dircolors-solarized
-
 typeset -U fpath FPATH
 fpath=(~/.zsh.d/autoload/ $fpath)
 
