@@ -23,26 +23,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # lsの補完色を表示色と同じにする
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-mkdir -p /tmp/zsh-completions-$USER/
-fpath=(/tmp/zsh-completions-$USER/ $fpath)
-
-# 補完ファイルを生成する関数。
-# 補完生成に時間がかかるものがあるため、ファイルが存在しない場合のみ生成。
-# これにより、時間がかかる初期化はブートから一回目の起動のみ行う。
-generate-completion-file-by-command() {
-  local cmd=$1
-  local completion_cmd=$2
-  local output_dir=/tmp/zsh-completions-$USER
-  local completion_file=$output_dir/_$cmd
-
-  # コマンドが存在して補完ファイルが存在しない場合のみ生成
-  if hash $cmd 2>/dev/null && [ ! -f $completion_file ]; then
-    eval $completion_cmd > $completion_file
-  fi
-}
-
-generate-completion-file-by-command 'poetry' 'poetry completions zsh'
-
 # trashyの補完がエラーになるので雑に回避。
 # TODO: 調査して問題を起こしているところにバグ報告をする。
 function _trash() {
