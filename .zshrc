@@ -1,5 +1,3 @@
-typeset -U path PATH
-source ~/.profile
 export PATH="$HOME/.zsh.d/bin:$PATH"
 
 if ! [ -t 0 ]; then
