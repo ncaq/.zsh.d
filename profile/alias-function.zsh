@@ -16,6 +16,7 @@ alias metaflac-add-replay-gain-all='find . -type d -print0|parallel --null --kee
 alias mkbackup='sudo mksquashfs etc home root var /$(date --iso-8601)_$(hostname).sfs -comp zstd -noappend -wildcards -e "... *.sfs" "... .cache" "... .stack-work" "... Cache" "... _cache" "... cache" "... dist" "... node_modules" "... target"'
 alias mozc-config='/usr/libexec/mozc/mozc_tool -mode=config_dialog'
 alias mozc-dict='/usr/libexec/mozc/mozc_tool --mode=dictionary_tool'
+alias nix-flake-update-commit="nix flake update --commit-lock-file --option commit-lockfile-summary 'build(deps): bump `flake.lock`'"
 alias opusenc-speech='parallel "opusenc --speech --framesize 60 {} {.}.opus" :::'
 alias oxipng-best='parallel "oxipng --opt max --strip safe --interlace 0 --zopfli" :::'
 alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
