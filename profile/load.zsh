@@ -8,10 +8,6 @@ do
   autoload -Uz $i
 done
 
-# キーバインドとして使えるようにする
-zle -N percol-history
-zle -N percol-subfind
-
 # autojumpがインストールされていたらロード
 if [ -f '/etc/profile.d/autojump.sh' ]; then
   source /etc/profile.d/autojump.sh
