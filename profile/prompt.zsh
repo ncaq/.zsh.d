@@ -6,10 +6,8 @@ chpwd() {
   ls
 }
 
-# starshipが使える場合それを使用する
+# starshipが使える場合はstarshipに任せる
 if hash starship 2>/dev/null; then
-  eval "$(starship init zsh)"
-  # starshipの設定で終了する
   return
 fi
 
