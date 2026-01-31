@@ -11,15 +11,3 @@ done
 # キーバインドとして使えるようにする
 zle -N percol-history
 zle -N percol-subfind
-
-# autojumpがインストールされていたらロード
-if [ -f '/etc/profile.d/autojump.sh' ]; then
-  source /etc/profile.d/autojump.sh
-elif [ -f '/usr/share/autojump/autojump.sh' ]; then
-  source /usr/share/autojump/autojump.sh
-fi
-
-# direnvがインストールされていたらロード
-if hash direnv 2>/dev/null; then
-  eval "$(direnv hook zsh)"
-fi
