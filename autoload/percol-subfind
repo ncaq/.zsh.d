@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-cd `find . -type d|percol`
-zle accept-line
