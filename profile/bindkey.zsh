@@ -1,5 +1,7 @@
 stty stop undef
 
+bindkey -e
+
 bindkey -s '\el' '^ull\n'       # M-l to ll
 bindkey -s '^,' ''              # C-, to Nothing
 
