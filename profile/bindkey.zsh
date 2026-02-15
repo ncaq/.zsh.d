@@ -1,5 +1,7 @@
 stty stop undef
 
+bindkey -e
+
 # terminfoからHome/Endキーのエスケープシーケンスを読み込んでバインド
 zmodload zsh/terminfo
 [[ -n "$terminfo[khome]" ]] && bindkey "$terminfo[khome]" beginning-of-line
