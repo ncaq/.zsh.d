@@ -22,10 +22,3 @@ zstyle ':completion:*:processes' command 'ps ax -o pid,s,args'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # lsの補完色を表示色と同じにする
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# trashyの補完がエラーになるので雑に回避。
-# TODO: 調査して問題を起こしているところにバグ報告をする。
-function _trash() {
-  _files
-}
-compdef _trash trash
