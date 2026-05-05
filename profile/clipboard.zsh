@@ -3,8 +3,12 @@
 # どちらもなければOSC 52エスケープシーケンスで、
 # クリップボードに書き込みます。
 to-clipboard() {
-  local stdin=$(</dev/stdin)         # 標準入力があればそれを優先して使います。
-  local content=${stdin:-$CUTBUFFER} # なければzshのkill-ringを使います。
+  local content
+  if [[ -t 0 ]]; then
+    content=$CUTBUFFER          # zshのkill-ringを使います。
+  else
+    content=$(</dev/stdin)      # 標準入力がありそうなら使います。
+  fi
   if [[ -n $DISPLAY ]] && hash xsel 2>/dev/null; then
     echo -n "$content" | xsel --clipboard --input --logfile /dev/null
   elif [[ -n $WAYLAND_DISPLAY ]] && hash wl-copy 2>/dev/null; then
