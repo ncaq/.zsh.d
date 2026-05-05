@@ -16,18 +16,3 @@ alias nix-flake-update-commit='nix flake update --commit-lock-file --option comm
 alias sqlite3-vacuum='locate --null "$(pwd)"|parallel --null "file"|rg "SQLite 3.x"|cut -d: -f1|parallel --verbose "sqlite3 {} \"vacuum;reindex;\""'
 alias trash-clear='trash-empty 30'
 alias treep='tree|bat'
-
-to-clipboard() {
-  # パイプで受け取った内容をクリップボードに書き込む関数
-  # 環境に応じてxsel, wl-copy, OSC 52を使い分けます
-  local content
-  content=$(</dev/stdin)
-  if [[ -n $DISPLAY ]] && hash xsel 2>/dev/null; then
-    echo -n "$content" | xsel --clipboard --input --logfile /dev/null
-  elif [[ -n $WAYLAND_DISPLAY ]] && hash wl-copy 2>/dev/null; then
-    echo -n "$content" | wl-copy
-  else
-    local encoded=$(echo -n "$content" | base64 | tr -d '\n')
-    printf '\e]52;c;%s\a' "$encoded"
-  fi
-}
