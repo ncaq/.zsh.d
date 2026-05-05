@@ -1,4 +1,5 @@
 # クリップボードへの書き込み。
+# 標準入力があればそれを、なければ$CUTBUFFER(zshのkill-ring)を、
 # `$DISPLAY`があればxsel、`$WAYLAND_DISPLAY`があれば`wl-copy`、
 # どちらもなければOSC 52エスケープシーケンスで、
 # クリップボードに書き込みます。
