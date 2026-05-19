@@ -7,7 +7,7 @@ to-clipboard() {
   if [[ -n $CUTBUFFER ]]; then
     # zshのkill-ringがあれば使います。
     content=$CUTBUFFER
-  elif [[ -t 0 ]]; then
+  elif [[ ! -t 0 ]]; then
     # 標準入力がありそうなら使います。
     content=$(</dev/stdin)
   fi
