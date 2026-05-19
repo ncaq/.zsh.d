@@ -13,10 +13,10 @@ to-clipboard() {
   fi
 
   # 内容を取得したらOSのクリップボードに書き込みます。
-  if [[ -n $DISPLAY ]] && command -v xsel; then
+  if [[ -n $DISPLAY ]] && command -v xsel &>/dev/null; then
     # xorgの`$DISPLAY`があって`xsel`が使えるならば、`xsel`で書き込みます。
     echo -n "$content" | xsel --clipboard --input --logfile /dev/null
-  elif [[ -n $WAYLAND_DISPLAY ]] && command -v wl-copy; then
+  elif [[ -n $WAYLAND_DISPLAY ]] && command -v wl-copy &>/dev/null; then
     # waylandの`$WAYLAND_DISPLAY`があって`wl-copy`が使えるならば、`wl-copy`で書き込みます。
     echo -n "$content" | wl-copy
   else
