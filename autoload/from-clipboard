@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# クリップボードからの読み取り。
+# OSC 52での読み取りはセキュリティ上多くのターミナルでブロックされるため、
+# `xsel`/`wl-paste`が使えない環境では何もしません。
+from-clipboard() {
+  if [[ -n $DISPLAY ]] && hash xsel 2>/dev/null; then
+    CUTBUFFER=$(xsel --clipboard --output --logfile /dev/null)
+  elif [[ -n $WAYLAND_DISPLAY ]] && hash wl-paste 2>/dev/null; then
+    CUTBUFFER=$(wl-paste --no-newline 2>/dev/null)
+  fi
+}
