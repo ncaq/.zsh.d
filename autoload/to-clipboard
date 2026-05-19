@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# 上位プラットフォームのクリップボードへの書き込み。
+to-clipboard() {
+  # まず内容を取得します。
+  local content
+  if [[ -n $CUTBUFFER ]]; then
+    # zshのkill-ringがあれば使います。
+    content=$CUTBUFFER
+  elif [[ ! -t 0 ]]; then
+    # 標準入力がありそうなら使います。
+    content=$(</dev/stdin)
+  fi
+
+  # 内容を取得したらOSのクリップボードに書き込みます。
+  if [[ -n $DISPLAY ]] && command -v xsel &>/dev/null; then
+    # xorgの`$DISPLAY`があって`xsel`が使えるならば、`xsel`で書き込みます。
+    echo -n "$content" | xsel --clipboard --input --logfile /dev/null
+  elif [[ -n $WAYLAND_DISPLAY ]] && command -v wl-copy &>/dev/null; then
+    # waylandの`$WAYLAND_DISPLAY`があって`wl-copy`が使えるならば、`wl-copy`で書き込みます。
+    echo -n "$content" | wl-copy
+  else
+    # どちらもなければ、OSC 52エスケープシーケンスでターミナル越しに書き込みます。
+    local encoded=$(echo -n "$content" | base64 | tr -d '\n')
+    printf '\e]52;c;%s\a' "$encoded"
+  fi
+}
