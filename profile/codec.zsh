@@ -9,8 +9,8 @@
 
 () {
   local base='-mt -m 6'
-  alias cwebp-lossless='parallel cwebp $base -lossless -z 9 {} -o {.}.webp :::'
-  alias cwebp-lossy='parallel cwebp $base -af {} -o {.}.webp :::'
+  alias cwebp-lossless="parallel cwebp $base -lossless -z 9 {} -o {.}.webp :::"
+  alias cwebp-lossy="parallel cwebp $base -af {} -o {.}.webp :::"
 }
 
 alias opusenc-speech='parallel opusenc --speech --framesize 60 {} {.}.opus :::'
