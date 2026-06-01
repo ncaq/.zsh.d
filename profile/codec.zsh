@@ -7,6 +7,11 @@
   alias avifenc-lossy-lite="parallel avifenc $lossy --advanced cq-level=32 {} {.}.avif :::"
 }
 
-alias cwebp-lossy='parallel cwebp -m 6 -mt -af -metadata all {} -o {.}.webp :::'
+() {
+  local base='-mt -m 6'
+  alias cwebp-lossless="parallel cwebp $base -lossless -z 9 {} -o {.}.webp :::"
+  alias cwebp-lossy="parallel cwebp $base -af {} -o {.}.webp :::"
+}
+
 alias opusenc-speech='parallel opusenc --speech --framesize 60 {} {.}.opus :::'
 alias oxipng-best='parallel oxipng --opt max --strip safe --interlace 0 --zopfli :::'
