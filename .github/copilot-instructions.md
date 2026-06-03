@@ -28,19 +28,21 @@ ASCIIに対応する全角形(Fullwidth Forms)は使用禁止。
 # プロジェクト概要
 
 このリポジトリはZshの設定ファイル群です。
-`~/.zsh.d`に`git clone`して使います。
+zshの設定ディレクトリに`git clone`して使います。
 
 ## ディレクトリ構成
 
-- `profile/`: Zshの設定ファイル群(`.zsh`拡張子)
+- `.zshrc`: エントリーポイント
 - `autoload/`: Zshのautoload関数
 - `bin/`: シェルスクリプト群
+- `profile/`: Zshの設定ファイル群(`.zsh`拡張子)
 - `share/`: 共有リソース
-- `.zshrc`: エントリーポイント
 
-# リポジトリ構成
+## LLM向けドキュメント
 
-Codex向けの`AGENTS.md`とClaude Code向けの`CLAUDE.md`は以下のように`.github/copilot-instructions.md`のシンボリックリンクになっています。
+Codex向けの`AGENTS.md`と、
+Claude Code向けの`CLAUDE.md`は、
+以下のように`.github/copilot-instructions.md`のシンボリックリンクになっています。
 
 ```console
 AGENTS.md -> .github/copilot-instructions.md
