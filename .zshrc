@@ -1,4 +1,4 @@
-export PATH="$HOME/.zsh.d/bin:$PATH"
+export PATH="$ZDOTDIR/.zsh.d/bin:$PATH"
 
 if ! [ -t 0 ]; then
   # 端末でない場合、パスを通しただけで終了する。
@@ -33,9 +33,9 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-completions
 
 typeset -U fpath FPATH
-fpath=(~/.zsh.d/autoload/ $fpath)
+fpath=("$ZDOTDIR"/.zsh.d/autoload/ $fpath)
 
-for i in ~/.zsh.d/profile/*
+for i in "$ZDOTDIR"/.zsh.d/profile/*
 do
   source $i
 done
