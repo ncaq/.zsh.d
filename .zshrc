@@ -1,3 +1,7 @@
+# `$ZDOTDIR`が設定されていない環境では、
+# `$HOME`を今後の`$ZDOTDIR`として設定する。
+export ZDOTDIR="${ZDOTDIR:-$HOME}"
+
 export PATH="$ZDOTDIR/.zsh.d/bin:$PATH"
 
 if ! [ -t 0 ]; then
