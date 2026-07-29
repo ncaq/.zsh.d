@@ -46,16 +46,16 @@ av1enc-run() {
 
 av1enc-svt() {
   local crf=$1 f=$2
-  av1enc-run
-  \ "$f" \
+  av1enc-run \
+    "$f" \
     -c:v libsvtav1 -preset 2 -crf "$crf" -pix_fmt yuv420p10le \
     -svtav1-params 'tune=0:enable-variance-boost=1:keyint=5s'
 }
 
 av1enc-nvenc() {
   local cq=$1 f=$2
-  av1enc-run
-  \ "$f" \
+  av1enc-run \
+    "$f" \
     -c:v av1_nvenc -preset p7 -tune hq \
     -multipass fullres -rc-lookahead 32 \
     -rc vbr -cq "$cq" -b:v 0 \
