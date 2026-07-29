@@ -28,7 +28,8 @@ alias h264-twitter='parallel ffmpeg -hide_banner -nostdin -n -i {} -c:v libx264 
 # エンコードの共通処理。
 # av1コーデックのwebmコンテナへのエンコード。
 # 音声は入力に関わらず常にlibopus 160kbpsへ再エンコードされます。
-# av1+webmの制約に寄り添うためです。
+# WebMはOpus/Vorbisしか許容しないため、
+# 実装の簡単さのために入力を判定せず一律にlibopusへ再エンコードしています。
 # opusは非可逆ですが、
 # 高ビットレートであるため音声の劣化はほとんど気にならないでしょう。
 # 気になる場合は別のコンテナにしてFLACなどを使って可逆圧縮にしてください。
