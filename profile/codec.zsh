@@ -27,8 +27,9 @@ alias h264-twitter='parallel ffmpeg -hide_banner -nostdin -n -i {} -c:v libx264 
 
 av1enc-run() {
   emulate -L zsh
-  local f=$1; shift
+  local f=$1
   [[ -n $f ]] || { print -u2 'usage: av1enc-{good,lite,nv} <file>'; return 2 }
+  shift
 
   local out=${f:r}.av1.webm
   if [[ -e $out ]]; then
