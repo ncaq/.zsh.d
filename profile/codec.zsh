@@ -32,6 +32,10 @@ alias h264-twitter='parallel ffmpeg -hide_banner -nostdin -n -i {} -c:v libx264 
 # opusは非可逆ですが、
 # 高ビットレートであるため音声の劣化はほとんど気にならないでしょう。
 # 気になる場合は別のコンテナにしてFLACなどを使って可逆圧縮にしてください。
+# 映像は先頭トラックのみ、
+# 音声は全トラック、
+# チャプターは保持、
+# 字幕は破棄。
 av1enc-run() {
   emulate -L zsh
   local f=$1
