@@ -64,7 +64,7 @@ av1enc-nvenc() {
 }
 
 (( $+functions[compdef] )) &&
-  compdef '_files -g "*.(avi|flv|m2ts|m4v|mkv|mov|mp4|ts|webm|wmv)"' \
+  compdef %'files -g "(#i)*.(avi|flv|m2ts|m4v|mkv|mov|mp4|ts|webm|wmv)"' \
           av1enc-svt av1enc-nvenc
 
 alias av1enc-good='av1enc-svt 20'
