@@ -25,6 +25,13 @@ alias opusenc-speech='parallel opusenc --speech --framesize 60 {} {.}.opus :::'
 
 alias h264-twitter='parallel ffmpeg -hide_banner -nostdin -n -i {} -c:v libx264 -preset slow -profile:v high -level:v 4.2 -pix_fmt yuv420p -crf 18 -maxrate 12M -bufsize 24M -g 60 -keyint_min 60 -sc_threshold 0 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart {.}.twitter.mp4 :::'
 
+# エンコードの共通処理。
+# av1コーデックのwebmコンテナへのエンコード。
+# 音声は入力に関わらず常にlibopus 160kbpsへ再エンコードされます。
+# av1+webmの制約に寄り添うためです。
+# opusは非可逆ですが、
+# 高ビットレートであるため音声の劣化はほとんど気にならないでしょう。
+# 気になる場合は別のコンテナにしてFLACなどを使って可逆圧縮にしてください。
 av1enc-run() {
   emulate -L zsh
   local f=$1
