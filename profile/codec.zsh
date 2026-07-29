@@ -23,7 +23,7 @@ alias opusenc-speech='parallel opusenc --speech --framesize 60 {} {.}.opus :::'
 
 # 動画
 
-alias h264-twitter='parallel ffmpeg -i {} -c:v libx264 -preset slow -profile:v high -level:v 4.2 -pix_fmt yuv420p -crf 18 -maxrate 12M -bufsize 24M -g 60 -keyint_min 60 -sc_threshold 0 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart {.}.twitter.mp4 :::'
+alias h264-twitter='parallel ffmpeg -hide_banner -nostdin -n -i {} -c:v libx264 -preset slow -profile:v high -level:v 4.2 -pix_fmt yuv420p -crf 18 -maxrate 12M -bufsize 24M -g 60 -keyint_min 60 -sc_threshold 0 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -b:a 192k -ar 48000 -ac 2 -movflags +faststart {.}.twitter.mp4 :::'
 
 av1enc-run() {
   emulate -L zsh
